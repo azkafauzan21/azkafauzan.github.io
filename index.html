@@ -3,10 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <title>Azka Fauzan — Portfolio</title>
+  <meta property="og:title" content="Azka Fauzan — Data & Machine Learning Portfolio" />
+  <meta property="og:description" content="A physicist who builds things with data. Specializing in deep learning architectures and computational modeling." />
+  <meta property="og:image" content="preview_image.jpg" /> 
+  <meta property="og:url" content="https://azkafauzan.github.io/portfolio/" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  
   <style>
     /* ── Reset & Variables ─────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -181,6 +189,11 @@
       transition: all 0.25s;
       cursor: pointer;
       border: none;
+    }
+
+    .btn-sm {
+      padding: 0.5rem 1.25rem;
+      font-size: 0.72rem;
     }
 
     .btn-primary {
@@ -471,7 +484,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0.75rem;
-      padding: 0 2.5rem 2rem;
+      padding: 0 2.5rem 1.5rem;
     }
 
     .feature-item {
@@ -492,6 +505,13 @@
     }
 
     .feature-dot.pink { background: var(--accent2); }
+
+    /* Project Action Links */
+    .project-links {
+      padding: 0 2.5rem 2.5rem;
+      display: flex;
+      gap: 1rem;
+    }
 
     /* Tradeoff box */
     .tradeoff-box {
@@ -595,7 +615,6 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <div class="nav-logo">azka.fauzan</div>
     <ul class="nav-links">
@@ -605,7 +624,6 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
   <section id="hero">
     <div class="hero-bg"></div>
     <div class="hero-grid"></div>
@@ -619,6 +637,7 @@
       </p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="cv_azka_fauzan_public.pdf" download class="btn btn-ghost">Download CV</a>
         <a href="#contact" class="btn btn-ghost">Get in Touch</a>
       </div>
     </div>
@@ -638,7 +657,6 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about">
     <div class="section-label">About</div>
     <h2>Physicist.<br>Data Engineer.<br>Builder.</h2>
@@ -689,82 +707,71 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects">
     <div class="section-label">Projects</div>
     <h2>Selected Work</h2>
     <p class="section-desc">Two projects from opposite ends of the spectrum — one scientific, one commercial.</p>
 
-    <!-- Project 1: Solar -->
     <div class="project-card fade-up">
       <div class="project-header">
         <div class="project-meta">
           <span class="project-tag tag-science">Scientific · Deep Learning</span>
-          <h3 class="project-title">SDO Solar Image<br>Preprocessing Pipeline</h3>
+          <h3 class="project-title">SDO Solar Image Pipeline &<br>Predictive Deep Learning</h3>
           <p class="project-subtitle">Undergraduate Thesis · 2025–2026</p>
           <p class="project-desc">
-            A production-grade data pipeline that downloads, calibrates, and stacks 11 years of
-            NASA Solar Dynamics Observatory imagery across 6 wavelength channels — preparing
-            ~24,000 daily observations as multi-channel NumPy arrays for deep learning consumption.
+            An end-to-end analytical pipeline that transforms 11 years of raw NASA satellite imagery into actionable space weather insights. I adapted state-of-the-art deep learning architectures (SimCLR & YOLOv5) to process 6-channel 32-bit solar tensors, circumventing the limitations of standard terrestrial models, and applied statistical causality to forecast sunspot formations.
           </p>
         </div>
       </div>
 
       <div class="project-badges">
         <span class="badge">Python</span>
-        <span class="badge">SunPy</span>
-        <span class="badge">AiaPy</span>
-        <span class="badge">Astropy</span>
+        <span class="badge">PyTorch</span>
         <span class="badge">SimCLR</span>
-        <span class="badge">YOLOv5</span>
-        <span class="badge">NumPy</span>
-        <span class="badge">Multiprocessing</span>
-        <span class="badge">FITS Format</span>
+        <span class="badge">YOLOv5x</span>
+        <span class="badge">Granger Causality</span>
+        <span class="badge">SunPy & Astropy</span>
+        <span class="badge">NumPy Tensors</span>
       </div>
 
-      <!-- Visualization placeholder — replace src with your actual image -->
       <div class="project-visual">
         <div class="visual-placeholder" id="solar-placeholder">
-          <div class="placeholder-icon">☀</div>
-          <p>SOLAR VISUALIZATION — REPLACE WITH YOUR IMAGE</p>
+          <div class="placeholder-icon">⛙</div>
+          <p>FLOWCHART ARCHITECTURE — REPLACE WITH YOUR IMAGE</p>
           <p style="font-size:0.65rem; margin-top:0.25rem;">
-            Replace this block with: &lt;img src="solar_preview.png" alt="SDO Multi-channel Solar Image"&gt;
+            Replace this block with: &lt;img src="flowchart_sdo.jpg" alt="SDO Solar Image Pipeline Architecture"&gt;
           </p>
         </div>
-        <!-- UNCOMMENT AND EDIT WHEN YOU HAVE THE IMAGE:
-        <img src="solar_preview.png" alt="SDO 6-channel solar image visualization" />
-        -->
-      </div>
+        </div>
 
       <div class="project-features">
         <div class="feature-item">
           <div class="feature-dot"></div>
-          <span>Parallel batch processing with checkpoint/resume support</span>
+          <span><strong>Physics-Aware Data Pipeline:</strong> Processed ~24,000 FITS files into 6-channel float32 NumPy arrays, preserving critical magnetic polarities via max-abs normalization.</span>
         </div>
         <div class="feature-item">
           <div class="feature-dot"></div>
-          <span>Multi-method reprojection with automatic fallback (interp → adaptive → exact)</span>
+          <span><strong>Custom Self-Supervised Backbone:</strong> Modified ResNet-34 to accept 6-channel inputs and trained it via SimCLR, disabling color-jitter to maintain radiometric integrity.</span>
         </div>
         <div class="feature-item">
           <div class="feature-dot"></div>
-          <span>AIA calibration pipeline: update_pointing, register, normalize_exposure</span>
+          <span><strong>Transfer Learning Localization:</strong> Injected the physics-encoded weights from SimCLR into YOLOv5x to accurately detect active regions without terrestrial pre-training bias.</span>
         </div>
         <div class="feature-item">
           <div class="feature-dot"></div>
-          <span>NaN/Inf repair via global spatial interpolation</span>
+          <span><strong>Spatiotemporal Kinematics:</strong> Compensated for the sun's fluid dynamics using the Snodgrass differential rotation model to accurately track feature evolution over time.</span>
         </div>
         <div class="feature-item">
           <div class="feature-dot"></div>
-          <span>Pre-processing validation against raw FITS headers</span>
+          <span><strong>Statistical Causality (Forecasting):</strong> Conducted Granger Causality tests on 1,262 events, statistically proving that Active Region expansions forecast sunspot formations with an optimal 3-day time lag.</span>
         </div>
-        <div class="feature-item">
-          <div class="feature-dot"></div>
-          <span>Output: (6, 256, 256) float32 NumPy arrays, z-score normalized per channel</span>
-        </div>
+      </div>
+
+      <div class="project-links">
+        <a href="https://github.com/azkafauzan/solar-pipeline" target="_blank" class="btn btn-ghost btn-sm">View GitHub Repository</a>
       </div>
     </div>
 
-    <!-- Project 2: Lyra POS -->
     <div class="project-card fade-up">
       <div class="project-header">
         <div class="project-meta">
@@ -788,7 +795,6 @@
         <span class="badge">Multi-device</span>
       </div>
 
-      <!-- Screenshot placeholder -->
       <div class="project-visual">
         <div class="visual-placeholder" id="lyra-placeholder">
           <div class="placeholder-icon">⬡</div>
@@ -797,10 +803,7 @@
             Replace this block with: &lt;img src="lyra_preview.png" alt="Lyra POS Interface"&gt;
           </p>
         </div>
-        <!-- UNCOMMENT AND EDIT WHEN YOU HAVE THE SCREENSHOT:
-        <img src="lyra_preview.png" alt="Lyra POS interface" />
-        -->
-      </div>
+        </div>
 
       <div class="project-features">
         <div class="feature-item">
@@ -809,35 +812,19 @@
         </div>
         <div class="feature-item">
           <div class="feature-dot pink"></div>
-          <span>Cash payment with automatic change calculation</span>
+          <span>Cash payment with automatic change calculation & QRIS recording</span>
         </div>
         <div class="feature-item">
           <div class="feature-dot pink"></div>
-          <span>QRIS manual payment recording</span>
+          <span>Kitchen queue system & Open Bill functionality</span>
         </div>
         <div class="feature-item">
           <div class="feature-dot pink"></div>
-          <span>Open Bill — save pending orders before checkout</span>
+          <span>PIN-protected admin panel with operational expense tracking</span>
         </div>
         <div class="feature-item">
           <div class="feature-dot pink"></div>
-          <span>Kitchen queue system</span>
-        </div>
-        <div class="feature-item">
-          <div class="feature-dot pink"></div>
-          <span>PIN-protected admin panel</span>
-        </div>
-        <div class="feature-item">
-          <div class="feature-dot pink"></div>
-          <span>Mini-ERP: operational expense tracking with auto cash/QRIS deduction</span>
-        </div>
-        <div class="feature-item">
-          <div class="feature-dot pink"></div>
-          <span>Sales reports: per-transaction, daily, weekly, monthly, custom range</span>
-        </div>
-        <div class="feature-item">
-          <div class="feature-dot pink"></div>
-          <span>Dynamic bar chart visualization with PDF export</span>
+          <span>Dynamic bar chart sales reports (daily/weekly/monthly) with PDF export</span>
         </div>
         <div class="feature-item">
           <div class="feature-dot pink"></div>
@@ -863,10 +850,13 @@
           </ul>
         </div>
       </div>
+
+      <div class="project-links">
+        <a href="https://github.com/azkafauzan/lyra-pos" target="_blank" class="btn btn-ghost btn-sm">View Source Code</a>
+      </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <div class="section-label">Contact</div>
     <h2>Let's Connect</h2>
@@ -880,7 +870,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <span>© 2025 Muhammad Azka Hafizha Fauzan</span>
     <span>Built with HTML · Hosted on GitHub Pages</span>
