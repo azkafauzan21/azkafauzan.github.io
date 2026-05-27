@@ -17,19 +17,19 @@
 
     :root {
       /* Refined Premium Palette */
-      --bg:        #08080c; /* Slightly deeper for more cinematic feel */
+      --bg:        #08080c; 
       --bg2:       #12121a;
       --bg3:       #1a1a26;
       --surface:   rgba(26, 26, 46, 0.4);
       --border:    rgba(255, 255, 255, 0.08);
       --border-hi: rgba(255, 255, 255, 0.15);
       
-      --accent:    #7c73ff; /* Slightly brighter for contrast */
+      --accent:    #7c73ff; 
       --accent-dim: rgba(124, 115, 255, 0.15);
       --accent2:   #ff7da9;
       
       --text:      #f4f4f8;
-      --text2:     #a8a8c0; /* Improved contrast from previous #9090b0 */
+      --text2:     #a8a8c0; 
       --text3:     #707090;
       
       --mono:      'DM Mono', monospace;
@@ -172,6 +172,16 @@
       color: var(--accent);
       border-color: var(--accent);
     }
+    
+    .quote-block {
+      border-left: 2px solid var(--accent);
+      padding-left: 1.5rem;
+      margin-bottom: 2rem;
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--text2);
+      font-style: italic;
+    }
 
     /* ── Hero Section ──────────────────────────────────────── */
     #hero {
@@ -243,7 +253,6 @@
       justify-content: center;
     }
     
-    /* Placeholder for a professional cinematic portrait or 3D data render */
     .hero-visual-placeholder {
       font-family: var(--mono);
       font-size: 0.75rem;
@@ -419,7 +428,7 @@
     .metric:last-child { border-right: none; }
     .metric-val {
       font-family: var(--serif);
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       color: var(--text);
     }
     .metric-label {
@@ -428,6 +437,7 @@
       color: var(--text3);
       text-transform: uppercase;
       letter-spacing: 0.1em;
+      margin-top: 0.25rem;
     }
 
     /* ── Contact & Footer ──────────────────────────────────── */
@@ -478,7 +488,7 @@
     }
     @media (max-width: 768px) {
       nav { padding: 1.25rem 2rem; }
-      .nav-links { display: none; } /* Consider adding a hamburger menu for mobile */
+      .nav-links { display: none; } 
       
       #hero { padding: 8rem 2rem 4rem; }
       .hero-grid-layout { grid-template-columns: 1fr; gap: 3rem; }
@@ -487,6 +497,9 @@
       section { padding: 5rem 2rem; }
       .about-layout { grid-template-columns: 1fr; gap: 3rem; }
       .project-card { padding: 2rem; }
+      .metric-bar { grid-template-columns: 1fr; }
+      .metric { border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1rem; }
+      .metric:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
       
       footer { flex-direction: column; gap: 1rem; text-align: center; }
     }
@@ -540,7 +553,7 @@
           My foundation is built on a <strong>Bachelor of Science in Physics</strong> from Universitas Pendidikan Indonesia. While studying the universe, I discovered a profound interest in the systems used to measure it.
         </p>
         <p>
-          I view machine learning and software engineering not just as coding, but as applied physics—managing states, optimizing constraints, and modeling reality through data. Whether processing <strong>11 years of solar tensors</strong> or building a <strong>zero-maintenance POS system</strong> for local businesses, the goal remains the same: robust, scalable architecture.
+          I view machine learning and software engineering not just as coding, but as applied physics—managing states, optimizing constraints, and modeling reality through data. Whether processing <strong>11 years of solar tensors</strong> or engineering an <strong>offline-first POS architecture</strong> for local businesses, the goal remains the same: robust, scalable systems.
         </p>
         <p>
           I am currently seeking opportunities where I can apply my analytical background to <strong>data engineering, machine learning, and systems architecture</strong>.
@@ -558,7 +571,7 @@
         </div>
         <div class="diff-item">
           <h4>Production Focused</h4>
-          <p>Code that lives outside Jupyter Notebooks. Building full-stack systems with PostgreSQL/Supabase, ensuring high availability and seamless user experiences across devices.</p>
+          <p>Code that lives outside isolated environments. Building resilient, offline-first mobile and web systems ensuring data integrity and seamless user experiences across constraints.</p>
         </div>
       </div>
     </div>
@@ -602,7 +615,7 @@
 
       <div class="project-visual-stack">
         <div class="visual-main">
-           <div class="hero-visual-placeholder">
+          <div class="hero-visual-placeholder">
             [ Flowchart Architecture Visual ]<br>
             <span style="font-size: 0.65rem; opacity: 0.5;">flowchart_sdo.png</span>
           </div>
@@ -637,45 +650,65 @@
       <div class="project-content">
         <div>
           <div class="project-meta">
-            <span class="project-tag">Full-Stack · Production Software</span>
+            <span class="project-tag">Enterprise Mobile App · Offline-First</span>
             <h3 class="project-title">Lyra POS</h3>
+          </div>
+
+          <div class="quote-block">
+            "Engineering is the bridge between the precision of Physics and the chaos of human needs."
           </div>
           
           <div class="project-story">
             <div class="story-block">
               <h5>Context</h5>
-              <p>A local café required a robust operational system to handle cashier operations, kitchen queues, and financials. Existing solutions were either too expensive or required heavy on-premise hardware maintenance.</p>
+              <p>F&B operations require absolute reliability. Existing cloud POS systems often fail during network drops, halting transactions, while on-premise solutions are too rigid for modern split-payment audits and real-time remote monitoring.</p>
             </div>
             <div class="story-block">
               <h5>Architecture</h5>
-              <p>Developed a cloud-native Point-of-Sale web application leveraging Supabase and PostgreSQL. Engineered real-time state synchronization across devices to ensure kitchen and front-of-house remained aligned without manual refreshing.</p>
+              <p>Developed an enterprise-grade mobile application using React Native and Supabase. Implemented an offline-first architecture utilizing AsyncStorage for background queue synchronization, and enforced strict relational data integrity (hybrid stock, bundle variants) via Supabase Stored Procedures (RPCs).</p>
             </div>
             <div class="story-block">
               <h5>Impact</h5>
-              <p>Currently deployed in production. Streamlined daily transactions with automated change calculation, integrated QRIS recording, and enabled the business owner to monitor live sales and generate dynamic PDF reports remotely.</p>
+              <p>Achieved zero-latency checkouts through optimistic UI rendering. The system seamlessly handles network outages, automatically reconciling split financial ledgers (Cash/QRIS) once connectivity is restored, providing precise audit trails without interrupting business flow.</p>
             </div>
           </div>
         </div>
 
         <div class="project-actions">
-          <a href="#" class="btn-link">Live Demo ↗</a>
-          <a href="#" class="btn-link">View Architecture ↗</a>
+          <a href="#" class="btn-link">View Documentation ↗</a>
+          <a href="#" class="btn-link">View Repository ↗</a>
         </div>
       </div>
 
       <div class="project-visual-stack">
         <div class="visual-main">
           <div class="hero-visual-placeholder">
-            [ Clean Dashboard Screenshot ]<br>
-            <span style="font-size: 0.65rem; opacity: 0.5;">lyra_preview.png</span>
+            [ App Dashboard / Layout Render ]<br>
+            <span style="font-size: 0.65rem; opacity: 0.5;">lyra-pos.png</span>
           </div>
         </div>
         
+        <div class="metric-bar">
+          <div class="metric">
+            <div class="metric-val">Offline</div>
+            <div class="metric-label">First Syncing</div>
+          </div>
+          <div class="metric">
+            <div class="metric-val">Zero</div>
+            <div class="metric-label">Latency UI</div>
+          </div>
+          <div class="metric">
+            <div class="metric-val">RPCs</div>
+            <div class="metric-label">Enforced Logic</div>
+          </div>
+        </div>
+
         <div class="tech-stack">
-          <span class="tech-badge">JavaScript</span>
+          <span class="tech-badge">React Native</span>
           <span class="tech-badge">Supabase</span>
           <span class="tech-badge">PostgreSQL</span>
-          <span class="tech-badge">Real-time API</span>
+          <span class="tech-badge">Expo</span>
+          <span class="tech-badge">AsyncStorage</span>
         </div>
       </div>
     </article>
@@ -700,7 +733,6 @@
   </footer>
 
   <script>
-    // Smooth Intersection Observer for elegant fading
     const observerOptions = {
       root: null,
       rootMargin: '0px',
@@ -711,7 +743,6 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          // Optional: Stop observing once faded in to prevent re-triggering
           observer.unobserve(entry.target); 
         }
       });
