@@ -554,6 +554,25 @@
       border: 1px solid var(--border);
       border-radius: 2px;
     }
+    /* --- Tambahan untuk Slider Lyra POS --- */
+    .slider-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; /* Firefox */
+    }
+    .slider-container::-webkit-scrollbar {
+      display: none; /* Chrome/Safari/Edge */
+    }
+    .slide-img {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      scroll-snap-align: center;
+    }
 
     /* ── Metrics Highlight ─────────────────────────────────── */
     .metric-bar {
@@ -1178,69 +1197,14 @@
 
       <div class="project-visual-stack">
         <!-- FIX: Lyra POS App mockup SVG -->
-        <div class="visual-main">
-          <svg width="100%" height="100%" viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
-            <defs>
-              <radialGradient id="posglow" cx="50%" cy="40%" r="55%">
-                <stop offset="0%" stop-color="#ff7da9" stop-opacity="0.07"/>
-                <stop offset="100%" stop-color="transparent"/>
-              </radialGradient>
-            </defs>
-            <rect width="440" height="300" fill="#0d0d18"/>
-            <rect width="440" height="300" fill="url(#posglow)"/>
-            <!-- Phone frame -->
-            <rect x="140" y="20" width="160" height="260" rx="14" fill="#12121a" stroke="rgba(255,125,169,0.25)" stroke-width="1.5"/>
-            <!-- Status bar -->
-            <rect x="148" y="28" width="144" height="20" rx="0" fill="#0d0d18"/>
-            <text x="160" y="41" font-family="monospace" font-size="7" fill="rgba(168,168,192,0.5)">9:41</text>
-            <text x="270" y="41" font-family="monospace" font-size="7" fill="rgba(168,168,192,0.5)">●●●</text>
-            <!-- App header -->
-            <rect x="148" y="48" width="144" height="28" fill="#1a1a26"/>
-            <text x="220" y="67" text-anchor="middle" font-family="monospace" font-size="9" fill="#ff7da9" letter-spacing="1.5">LYRA POS</text>
-            <!-- Offline badge -->
-            <rect x="260" y="54" width="28" height="14" rx="3" fill="rgba(74,222,128,0.12)" stroke="rgba(74,222,128,0.3)" stroke-width="0.8"/>
-            <circle cx="265" cy="61" r="2" fill="#4ade80"/>
-            <text x="272" y="64" font-family="monospace" font-size="5.5" fill="#4ade80">ON</text>
-            <!-- Cart rows -->
-            <rect x="148" y="76" width="144" height="22" fill="rgba(255,255,255,0.02)"/>
-            <text x="158" y="90" font-family="monospace" font-size="7.5" fill="rgba(244,244,248,0.85)">Americano x2</text>
-            <text x="268" y="90" text-anchor="end" font-family="monospace" font-size="7.5" fill="rgba(244,244,248,0.85)">Rp 40k</text>
-            <rect x="148" y="98" width="144" height="22" fill="rgba(255,255,255,0.01)"/>
-            <text x="158" y="112" font-family="monospace" font-size="7.5" fill="rgba(244,244,248,0.7)">Croissant x1</text>
-            <text x="268" y="112" text-anchor="end" font-family="monospace" font-size="7.5" fill="rgba(244,244,248,0.7)">Rp 28k</text>
-            <rect x="148" y="120" width="144" height="22" fill="rgba(255,255,255,0.02)"/>
-            <text x="158" y="134" font-family="monospace" font-size="7.5" fill="rgba(244,244,248,0.85)">Matcha Latte x1</text>
-            <text x="268" y="134" text-anchor="end" font-family="monospace" font-size="7.5" fill="rgba(244,244,248,0.85)">Rp 35k</text>
-            <!-- Divider -->
-            <line x1="148" y1="145" x2="292" y2="145" stroke="rgba(255,255,255,0.06)" stroke-width="0.8"/>
-            <!-- Total -->
-            <text x="158" y="163" font-family="monospace" font-size="8" fill="rgba(168,168,192,0.7)">TOTAL</text>
-            <text x="282" y="163" text-anchor="end" font-family="monospace" font-size="10" fill="#ff7da9">Rp 103k</text>
-            <!-- Payment split -->
-            <text x="158" y="183" font-family="monospace" font-size="6.5" fill="rgba(112,112,144,0.8)">Cash</text>
-            <rect x="148" y="187" width="60" height="14" rx="2" fill="rgba(124,115,255,0.12)" stroke="rgba(124,115,255,0.25)" stroke-width="0.8"/>
-            <text x="178" y="197" text-anchor="middle" font-family="monospace" font-size="6" fill="#7c73ff">Rp 50k</text>
-            <text x="218" y="183" font-family="monospace" font-size="6.5" fill="rgba(112,112,144,0.8)">QRIS</text>
-            <rect x="213" y="187" width="60" height="14" rx="2" fill="rgba(255,125,169,0.1)" stroke="rgba(255,125,169,0.25)" stroke-width="0.8"/>
-            <text x="243" y="197" text-anchor="middle" font-family="monospace" font-size="6" fill="#ff7da9">Rp 53k</text>
-            <!-- Pay button -->
-            <rect x="148" y="215" width="144" height="32" rx="4" fill="rgba(124,115,255,0.85)"/>
-            <text x="220" y="235" text-anchor="middle" font-family="monospace" font-size="9" fill="white" font-weight="bold" letter-spacing="1">CHARGE</text>
-            <!-- Bottom nav -->
-            <rect x="148" y="252" width="144" height="20" rx="0" fill="#0d0d18"/>
-            <text x="172" y="265" text-anchor="middle" font-family="monospace" font-size="7" fill="rgba(124,115,255,0.8)">▦</text>
-            <text x="200" y="265" text-anchor="middle" font-family="monospace" font-size="7" fill="rgba(168,168,192,0.4)">≡</text>
-            <text x="240" y="265" text-anchor="middle" font-family="monospace" font-size="7" fill="rgba(168,168,192,0.4)">↗</text>
-            <text x="268" y="265" text-anchor="middle" font-family="monospace" font-size="7" fill="rgba(168,168,192,0.4)">⚙</text>
-            <!-- Side annotation -->
-            <text x="14" y="150" font-family="monospace" font-size="6.5" fill="rgba(112,112,144,0.5)" writing-mode="horizontal-tb">OPTIMISTIC UI</text>
-            <line x1="135" y1="130" x2="148" y2="130" stroke="rgba(112,112,144,0.2)" stroke-width="0.8" stroke-dasharray="2 3"/>
-            <text x="310" y="200" font-family="monospace" font-size="6.5" fill="rgba(112,112,144,0.5)">SPLIT</text>
-            <text x="310" y="210" font-family="monospace" font-size="6.5" fill="rgba(112,112,144,0.5)">LEDGER</text>
-            <line x1="308" y1="194" x2="292" y2="194" stroke="rgba(112,112,144,0.2)" stroke-width="0.8" stroke-dasharray="2 3"/>
-            <!-- Corner annotation -->
-            <text x="14" y="287" font-family="monospace" font-size="7" fill="rgba(112,112,144,0.4)" letter-spacing="1">APP MOCKUP · LYRA POS · ANDROID</text>
-          </svg>
+        <div class="visual-main slider-container">
+          <img src="lyra-pos-1.jpg" alt="Antarmuka Lyra POS" class="slide-img" />
+          
+          <img src="lyra-pos-2.jpg" alt="Arsitektur Lyra POS" class="slide-img" />
+        </div>
+        
+        <div style="text-align: right; font-family: var(--mono); font-size: 0.65rem; color: var(--text3); margin-top: -0.5rem; letter-spacing: 0.1em;">
+          ← GESER UNTUK MENJELAJAH →
         </div>
         
         <!-- FIX: Improved Lyra metrics with concrete values -->
