@@ -7,7 +7,6 @@
   <title>Azka Fauzan — Applied AI & Computational Physics</title>
   <meta name="description" content="A physicist who builds things with data. Specializing in deep learning architectures and computational modeling." />
   
-  <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Azka Fauzan — Applied AI & Computational Physics" />
   <meta property="og:description" content="A computational physicist specializing in deep learning architectures and production engineering." />
@@ -109,7 +108,6 @@
     }
     .nav-links a:hover { color: var(--text); }
 
-    /* ── FIX 1: Hamburger Menu Mobile ──────────────────────── */
     .nav-hamburger {
       display: none;
       flex-direction: column;
@@ -156,7 +154,7 @@
     }
     .nav-mobile-menu a:hover { color: var(--text); }
 
-    /* ── FIX 2: Available for Work Badge ───────────────────── */
+    /* ── Availability Badge ─────────────────────────────────── */
     .availability-badge {
       display: inline-flex;
       align-items: center;
@@ -253,7 +251,6 @@
       color: var(--accent);
       border-color: var(--accent);
     }
-    /* FIX: disabled link state for broken/TBD links */
     .btn-link[aria-disabled="true"],
     .btn-link.disabled {
       opacity: 0.35;
@@ -329,7 +326,6 @@
 
     .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-    /* ── FIX 3: Hero Visual — SVG Abstract Render ──────────── */
     .hero-visual-container {
       position: relative;
       height: 400px;
@@ -341,16 +337,7 @@
       align-items: center;
       justify-content: center;
     }
-    
-    .hero-visual-placeholder {
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      color: var(--text3);
-      text-align: center;
-      letter-spacing: 0.05em;
-    }
 
-    /* FIX: Abstract SVG render fills visual containers */
     .hero-abstract-render {
       width: 100%;
       height: 100%;
@@ -367,7 +354,7 @@
     .section-header { margin-bottom: 4rem; }
     h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; }
 
-    /* ── About / Differentiation ───────────────────────────── */
+    /* ── About ─────────────────────────────────────────────── */
     .about-layout {
       display: grid;
       grid-template-columns: 1fr 1.2fr;
@@ -405,7 +392,7 @@
       line-height: 1.6;
     }
 
-    /* ── FIX 4: Skills Section ─────────────────────────────── */
+    /* ── Skills ────────────────────────────────────────────── */
     #skills {
       padding: 0 4rem 6rem;
       max-width: 1200px;
@@ -424,9 +411,7 @@
       padding: 1.5rem;
       transition: var(--transition);
     }
-    .skill-group:hover {
-      border-color: var(--border-hi);
-    }
+    .skill-group:hover { border-color: var(--border-hi); }
     .skill-group-title {
       font-family: var(--mono);
       font-size: 0.65rem;
@@ -435,11 +420,7 @@
       letter-spacing: 0.15em;
       margin-bottom: 1rem;
     }
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .skill-tag {
       font-family: var(--mono);
       font-size: 0.7rem;
@@ -450,7 +431,7 @@
       border-radius: 2px;
     }
 
-    /* ── Projects (Case Studies) ───────────────────────────── */
+    /* ── Projects ──────────────────────────────────────────── */
     .project-card {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -523,7 +504,7 @@
       flex-direction: column;
       gap: 1rem;
     }
-    
+
     .visual-main {
       width: 100%;
       height: 300px;
@@ -537,41 +518,160 @@
       position: relative;
     }
     .visual-main img { width: 100%; height: 100%; object-fit: cover; }
-    
-    .tech-stack {
+
+    /* ── Tablet Mockup (Lyra POS) ──────────────────────────── */
+    .tablet-wrapper {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border);
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1rem 0 0.5rem;
     }
-    .tech-badge {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      color: var(--text3);
-      background: rgba(255,255,255,0.02);
-      padding: 0.2rem 0.5rem;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-    }
-    /* --- Tambahan untuk Slider Lyra POS --- */
-    .slider-container {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none; /* Firefox */
-    }
-    .slider-container::-webkit-scrollbar {
-      display: none; /* Chrome/Safari/Edge */
-    }
-    .slide-img {
-      flex: 0 0 100%;
+    .tablet-frame {
+      position: relative;
       width: 100%;
+      max-width: 420px;
+      background: #1c1c24;
+      border-radius: 26px;
+      padding: 18px 14px 22px;
+      border: 2px solid #2e2e3c;
+      box-shadow:
+        0 0 0 1px #0a0a0e,
+        inset 0 0 0 1px #38384a,
+        0 24px 48px rgba(0,0,0,0.5);
+    }
+    .tablet-camera-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .tablet-camera {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #28283a;
+      border: 1px solid #3c3c50;
+    }
+    .tablet-mic {
+      width: 30px; height: 5px;
+      border-radius: 3px;
+      background: #28283a;
+      border: 1px solid #3c3c50;
+    }
+    .tablet-screen {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #08080c;
+      position: relative;
+    }
+    .lyra-slide-track {
+      display: flex;
+      width: 200%;
+      height: 100%;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .lyra-slide-track img {
+      width: 50%;
       height: 100%;
       object-fit: cover;
-      scroll-snap-align: center;
+      object-position: top;
+      flex-shrink: 0;
+      display: block;
+    }
+    .tablet-home-bar {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .tablet-home-indicator {
+      width: 72px; height: 4px;
+      border-radius: 2px;
+      background: #3a3a50;
+    }
+    /* Physical buttons */
+    .tablet-btn-right {
+      position: absolute;
+      right: -4px;
+      background: #222230;
+      border-radius: 0 3px 3px 0;
+      border: 1.5px solid #2e2e3c;
+      border-left: none;
+    }
+    .tablet-btn-power  { top: 52px;  width: 4px; height: 34px; }
+    .tablet-btn-vol-up { top: 98px;  width: 3px; height: 22px; }
+    .tablet-btn-vol-dn { top: 128px; width: 3px; height: 22px; }
+    .tablet-btn-left {
+      position: absolute;
+      left: -4px;
+      top: 72px;
+      width: 3px; height: 48px;
+      background: #222230;
+      border-radius: 3px 0 0 3px;
+      border: 1.5px solid #2e2e3c;
+      border-right: none;
+    }
+    /* Controls below tablet */
+    .tablet-controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .tablet-caption {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+    .tc-label {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      color: var(--text3);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    .tc-title {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--text2);
+    }
+    .tablet-nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .t-arrow-btn {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      border: 1px solid var(--border-hi);
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      padding: 0;
+      line-height: 1;
+    }
+    .t-arrow-btn:hover { border-color: var(--text); background: rgba(255,255,255,0.04); }
+    .t-arrow-btn:disabled { opacity: 0.25; cursor: default; pointer-events: none; }
+    .t-dot-btn {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      border: none;
+      background: var(--border-hi);
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .t-dot-btn.active {
+      background: var(--accent);
+      transform: scale(1.35);
     }
 
     /* ── Metrics Highlight ─────────────────────────────────── */
@@ -599,6 +699,23 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
       margin-top: 0.25rem;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    .tech-badge {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text3);
+      background: rgba(255,255,255,0.02);
+      padding: 0.2rem 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 2px;
     }
 
     /* ── Contact & Footer ──────────────────────────────────── */
@@ -650,7 +767,6 @@
     }
     @media (max-width: 768px) {
       nav { padding: 1.25rem 2rem; }
-      /* FIX: Show hamburger, hide desktop links */
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
       
@@ -668,12 +784,13 @@
       
       footer { flex-direction: column; gap: 1rem; text-align: center; }
       .contact-links { flex-direction: column; align-items: center; }
+
+      .tablet-frame { max-width: 300px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- FIX: Added hamburger button + mobile drawer -->
   <nav>
     <div class="nav-logo">azka<span>.</span>fauzan</div>
     <ul class="nav-links">
@@ -698,7 +815,6 @@
     <div class="hero-bg"></div>
     <div class="hero-grid-layout">
       <div class="hero-content fade-up">
-        <!-- FIX: Available for work badge -->
         <div class="availability-badge">
           <span class="availability-dot"></span>
           Open to Opportunities
@@ -714,7 +830,6 @@
         </div>
       </div>
       <div class="hero-visual fade-up">
-        <!-- FIX: Replaced placeholder with abstract SVG render -->
         <div class="hero-visual-container">
           <svg class="hero-abstract-render" viewBox="0 0 480 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
             <defs>
@@ -734,26 +849,17 @@
             <rect width="480" height="400" fill="#0d0d18"/>
             <rect width="480" height="400" fill="url(#rg1)"/>
             <rect width="480" height="400" fill="url(#rg2)"/>
-            <!-- Grid lines -->
             <g stroke="rgba(124,115,255,0.07)" stroke-width="0.5">
-              <line x1="0" y1="50" x2="480" y2="50"/>
-              <line x1="0" y1="100" x2="480" y2="100"/>
-              <line x1="0" y1="150" x2="480" y2="150"/>
-              <line x1="0" y1="200" x2="480" y2="200"/>
-              <line x1="0" y1="250" x2="480" y2="250"/>
-              <line x1="0" y1="300" x2="480" y2="300"/>
-              <line x1="0" y1="350" x2="480" y2="350"/>
-              <line x1="80" y1="0" x2="80" y2="400"/>
-              <line x1="160" y1="0" x2="160" y2="400"/>
-              <line x1="240" y1="0" x2="240" y2="400"/>
-              <line x1="320" y1="0" x2="320" y2="400"/>
-              <line x1="400" y1="0" x2="400" y2="400"/>
+              <line x1="0" y1="50" x2="480" y2="50"/><line x1="0" y1="100" x2="480" y2="100"/>
+              <line x1="0" y1="150" x2="480" y2="150"/><line x1="0" y1="200" x2="480" y2="200"/>
+              <line x1="0" y1="250" x2="480" y2="250"/><line x1="0" y1="300" x2="480" y2="300"/>
+              <line x1="0" y1="350" x2="480" y2="350"/><line x1="80" y1="0" x2="80" y2="400"/>
+              <line x1="160" y1="0" x2="160" y2="400"/><line x1="240" y1="0" x2="240" y2="400"/>
+              <line x1="320" y1="0" x2="320" y2="400"/><line x1="400" y1="0" x2="400" y2="400"/>
             </g>
-            <!-- Orbit rings -->
             <ellipse cx="280" cy="200" rx="140" ry="140" fill="none" stroke="rgba(124,115,255,0.12)" stroke-width="0.8"/>
             <ellipse cx="280" cy="200" rx="100" ry="100" fill="none" stroke="rgba(124,115,255,0.18)" stroke-width="0.8"/>
             <ellipse cx="280" cy="200" rx="60" ry="60" fill="none" stroke="rgba(124,115,255,0.25)" stroke-width="1"/>
-            <!-- Particle / data points -->
             <g filter="url(#glow)">
               <circle cx="280" cy="200" r="4" fill="#7c73ff" opacity="0.9"/>
               <circle cx="380" cy="200" r="2.5" fill="#7c73ff" opacity="0.7"/>
@@ -762,7 +868,6 @@
               <circle cx="330" cy="130" r="1.5" fill="#7c73ff" opacity="0.5"/>
               <circle cx="340" cy="270" r="2" fill="#ff7da9" opacity="0.6"/>
             </g>
-            <!-- Connection lines -->
             <g stroke="rgba(124,115,255,0.2)" stroke-width="0.8">
               <line x1="280" y1="200" x2="380" y2="200"/>
               <line x1="280" y1="200" x2="230" y2="140"/>
@@ -770,15 +875,11 @@
               <line x1="280" y1="200" x2="330" y2="130"/>
               <line x1="280" y1="200" x2="340" y2="270"/>
             </g>
-            <!-- Solar flare / activity lines -->
             <g stroke="rgba(255,125,169,0.15)" stroke-width="0.6" stroke-dasharray="3 5">
               <path d="M 60 80 Q 120 60 180 90 Q 240 120 300 100" fill="none"/>
               <path d="M 40 320 Q 100 300 160 330 Q 220 360 280 340" fill="none"/>
             </g>
-            <!-- Corner label -->
-            <text x="16" y="385" font-family="monospace" font-size="8" fill="rgba(112,112,144,0.5)" letter-spacing="1">
-              img src="profile.jpg"
-            </text>
+            <text x="16" y="385" font-family="monospace" font-size="8" fill="rgba(112,112,144,0.5)" letter-spacing="1">img src="profile.jpg"</text>
           </svg>
         </div>
       </div>
@@ -790,7 +891,6 @@
       <div class="section-label">Architecture & Philosophy</div>
       <h2>Scientific Rigor.<br>Engineering Execution.</h2>
     </div>
-    
     <div class="about-layout fade-up">
       <div class="about-narrative">
         <p>
@@ -803,7 +903,6 @@
           I am currently seeking opportunities where I can apply my analytical background to <strong>data engineering, machine learning, and systems architecture</strong>.
         </p>
       </div>
-      
       <div class="diff-list">
         <div class="diff-item">
           <h4>Physics Mindset</h4>
@@ -821,7 +920,6 @@
     </div>
   </section>
 
-  <!-- FIX: New Skills / Tech Stack section -->
   <section id="skills">
     <div class="section-header fade-up">
       <div class="section-label">Technical Arsenal</div>
@@ -875,6 +973,7 @@
       <h2>Systems & Research</h2>
     </div>
 
+    <!-- Project 1: SDO Solar -->
     <article class="project-card fade-up">
       <div class="project-content">
         <div>
@@ -882,7 +981,6 @@
             <span class="project-tag">Research · Deep Learning Pipeline</span>
             <h3 class="project-title">SDO Solar Image Pipeline & Predictive AI</h3>
           </div>
-          
           <div class="project-story">
             <div class="story-block">
               <h5>Context</h5>
@@ -898,17 +996,14 @@
             </div>
           </div>
         </div>
-
         <div class="project-actions">
-          <!-- FIX: Disabled state for unready links -->
           <a href="#" class="btn-link disabled" aria-disabled="true" title="Coming soon">Read Thesis ↗</a>
           <a href="https://github.com/azkafauzan21" target="_blank" rel="noopener" class="btn-link">View Repository ↗</a>
         </div>
       </div>
 
       <div class="project-visual-stack">
-        <!-- FIX: SDO Pipeline Architecture Diagram (SVG) -->
-        <div class="visual-main">          
+        <div class="visual-main">
           <svg width="100%" viewBox="0 0 680 920" role="img" xmlns="http://www.w3.org/2000/svg" style="display:block;">
             <title>SDO Solar Image Pipeline Architecture</title>
             <desc>End-to-end pipeline from NASA SDO data acquisition through deep learning to analytical conclusion.</desc>
@@ -917,7 +1012,6 @@
                 .th { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; fill: #f4f4f8; }
                 .ts { font-family: 'DM Mono', monospace; font-size: 9.5px; font-weight: 300; fill: #a8a8c0; }
                 .arr { stroke: rgba(255,255,255,0.25); stroke-width: 1; fill: none; }
-                .node { cursor: default; }
                 .c-purple rect { fill: rgba(124,115,255,0.15); stroke: rgba(124,115,255,0.5); }
                 .c-purple .th { fill: #b8b2ff; }
                 .c-purple .ts { fill: #8a84e0; }
@@ -940,202 +1034,69 @@
                 <path d="M2 1L8 5L2 9" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </marker>
             </defs>
-           
-            <!-- START -->
-            <g class="node c-purple">
-              <rect x="270" y="16" width="140" height="36" rx="18" stroke-width="0.5"/>
-              <text class="th" x="340" y="34" text-anchor="middle" dominant-baseline="central">Start</text>
-            </g>
-           
+            <g class="node c-purple"><rect x="270" y="16" width="140" height="36" rx="18" stroke-width="0.5"/><text class="th" x="340" y="34" text-anchor="middle" dominant-baseline="central">Start</text></g>
             <line x1="340" y1="52" x2="340" y2="72" class="arr" marker-end="url(#arrow)"/>
-           
-            <!-- DATA ACQUISITION -->
-            <g class="node c-gray">
-              <rect x="210" y="72" width="260" height="40" rx="8" stroke-width="0.5"/>
-              <text class="th" x="340" y="92" text-anchor="middle" dominant-baseline="central">Data acquisition</text>
-            </g>
-           
-            <!-- Branch from Data Acquisition -->
+            <g class="node c-gray"><rect x="210" y="72" width="260" height="40" rx="8" stroke-width="0.5"/><text class="th" x="340" y="92" text-anchor="middle" dominant-baseline="central">Data acquisition</text></g>
             <line x1="340" y1="112" x2="340" y2="148" class="dim"/>
             <line x1="90"  y1="148" x2="590" y2="148" class="dim"/>
             <line x1="90"  y1="148" x2="90"  y2="168" class="arr" marker-end="url(#arrow)"/>
             <line x1="256" y1="148" x2="256" y2="168" class="arr" marker-end="url(#arrow)"/>
             <line x1="424" y1="148" x2="424" y2="168" class="arr" marker-end="url(#arrow)"/>
             <line x1="590" y1="148" x2="590" y2="168" class="arr" marker-end="url(#arrow)"/>
-           
-            <!-- COLUMN HEADERS -->
-            <g class="node c-teal">
-              <rect x="20" y="168" width="140" height="36" rx="8" stroke-width="0.5"/>
-              <text class="th" x="90" y="186" text-anchor="middle" dominant-baseline="central">Image data</text>
-            </g>
-            <g class="node c-teal">
-              <rect x="186" y="168" width="140" height="36" rx="8" stroke-width="0.5"/>
-              <text class="th" x="256" y="186" text-anchor="middle" dominant-baseline="central">Catalog data</text>
-            </g>
-            <g class="node c-blue">
-              <rect x="354" y="168" width="140" height="36" rx="8" stroke-width="0.5"/>
-              <text class="th" x="424" y="180" text-anchor="middle" dominant-baseline="central">Spatiotemporal</text>
-              <text class="ts" x="424" y="197" text-anchor="middle" dominant-baseline="central">analysis</text>
-            </g>
-            <g class="node c-blue">
-              <rect x="520" y="168" width="140" height="36" rx="8" stroke-width="0.5"/>
-              <text class="th" x="590" y="180" text-anchor="middle" dominant-baseline="central">Statistical</text>
-              <text class="ts" x="590" y="197" text-anchor="middle" dominant-baseline="central">validation</text>
-            </g>
-           
+            <g class="node c-teal"><rect x="20" y="168" width="140" height="36" rx="8" stroke-width="0.5"/><text class="th" x="90" y="186" text-anchor="middle" dominant-baseline="central">Image data</text></g>
+            <g class="node c-teal"><rect x="186" y="168" width="140" height="36" rx="8" stroke-width="0.5"/><text class="th" x="256" y="186" text-anchor="middle" dominant-baseline="central">Catalog data</text></g>
+            <g class="node c-blue"><rect x="354" y="168" width="140" height="36" rx="8" stroke-width="0.5"/><text class="th" x="424" y="180" text-anchor="middle" dominant-baseline="central">Spatiotemporal</text><text class="ts" x="424" y="197" text-anchor="middle" dominant-baseline="central">analysis</text></g>
+            <g class="node c-blue"><rect x="520" y="168" width="140" height="36" rx="8" stroke-width="0.5"/><text class="th" x="590" y="180" text-anchor="middle" dominant-baseline="central">Statistical</text><text class="ts" x="590" y="197" text-anchor="middle" dominant-baseline="central">validation</text></g>
             <line x1="90"  y1="204" x2="90"  y2="224" class="arr" marker-end="url(#arrow)"/>
             <line x1="256" y1="204" x2="256" y2="224" class="arr" marker-end="url(#arrow)"/>
             <line x1="424" y1="204" x2="424" y2="224" class="arr" marker-end="url(#arrow)"/>
             <line x1="590" y1="204" x2="590" y2="224" class="arr" marker-end="url(#arrow)"/>
-           
-            <!-- ROW 2 -->
-            <g class="node c-teal">
-              <rect x="20" y="224" width="140" height="48" rx="8" stroke-width="0.5"/>
-              <text class="th" x="90" y="241" text-anchor="middle" dominant-baseline="central">Collect SDO</text>
-              <text class="ts" x="90" y="258" text-anchor="middle" dominant-baseline="central">satellite image (AIA &amp; HMI)</text>
-            </g>
-            <g class="node c-teal">
-              <rect x="186" y="224" width="140" height="48" rx="8" stroke-width="0.5"/>
-              <text class="th" x="256" y="241" text-anchor="middle" dominant-baseline="central">Collect solar</text>
-              <text class="ts" x="256" y="258" text-anchor="middle" dominant-baseline="central">event data (HEK)</text>
-            </g>
-            <g class="node c-blue">
-              <rect x="354" y="224" width="140" height="48" rx="8" stroke-width="0.5"/>
-              <text class="th" x="424" y="241" text-anchor="middle" dominant-baseline="central">Differential rotation</text>
-              <text class="ts" x="424" y="258" text-anchor="middle" dominant-baseline="central">correction to boxes</text>
-            </g>
-            <g class="node c-blue">
-              <rect x="520" y="224" width="140" height="48" rx="8" stroke-width="0.5"/>
-              <text class="th" x="590" y="241" text-anchor="middle" dominant-baseline="central">Pearson correlation</text>
-              <text class="ts" x="590" y="258" text-anchor="middle" dominant-baseline="central">significance test</text>
-            </g>
-           
+            <g class="node c-teal"><rect x="20" y="224" width="140" height="48" rx="8" stroke-width="0.5"/><text class="th" x="90" y="241" text-anchor="middle" dominant-baseline="central">Collect SDO</text><text class="ts" x="90" y="258" text-anchor="middle" dominant-baseline="central">satellite image (AIA &amp; HMI)</text></g>
+            <g class="node c-teal"><rect x="186" y="224" width="140" height="48" rx="8" stroke-width="0.5"/><text class="th" x="256" y="241" text-anchor="middle" dominant-baseline="central">Collect solar</text><text class="ts" x="256" y="258" text-anchor="middle" dominant-baseline="central">event data (HEK)</text></g>
+            <g class="node c-blue"><rect x="354" y="224" width="140" height="48" rx="8" stroke-width="0.5"/><text class="th" x="424" y="241" text-anchor="middle" dominant-baseline="central">Differential rotation</text><text class="ts" x="424" y="258" text-anchor="middle" dominant-baseline="central">correction to boxes</text></g>
+            <g class="node c-blue"><rect x="520" y="224" width="140" height="48" rx="8" stroke-width="0.5"/><text class="th" x="590" y="241" text-anchor="middle" dominant-baseline="central">Pearson correlation</text><text class="ts" x="590" y="258" text-anchor="middle" dominant-baseline="central">significance test</text></g>
             <line x1="90"  y1="272" x2="90"  y2="292" class="arr" marker-end="url(#arrow)"/>
             <line x1="256" y1="272" x2="256" y2="292" class="arr" marker-end="url(#arrow)"/>
             <line x1="424" y1="272" x2="424" y2="292" class="arr" marker-end="url(#arrow)"/>
             <line x1="590" y1="272" x2="590" y2="292" class="arr" marker-end="url(#arrow)"/>
-           
-            <!-- ROW 3 -->
-            <g class="node c-teal">
-              <rect x="20" y="292" width="140" height="36" rx="8" stroke-width="0.5"/>
-              <text class="th" x="90" y="310" text-anchor="middle" dominant-baseline="central">Data preprocessing</text>
-            </g>
-            <g class="node c-teal">
-              <rect x="186" y="292" width="140" height="48" rx="8" stroke-width="0.5"/>
-              <text class="th" x="256" y="309" text-anchor="middle" dominant-baseline="central">Extract &amp; transform</text>
-              <text class="ts" x="256" y="326" text-anchor="middle" dominant-baseline="central">event coordinates</text>
-            </g>
-            <g class="node c-blue">
-              <rect x="354" y="292" width="140" height="48" rx="8" stroke-width="0.5"/>
-              <text class="th" x="424" y="309" text-anchor="middle" dominant-baseline="central">Stationarity test</text>
-              <text class="ts" x="424" y="326" text-anchor="middle" dominant-baseline="central">spatial → time-series</text>
-            </g>
-            <g class="node c-blue">
-              <rect x="520" y="292" width="140" height="48" rx="8" stroke-width="0.5"/>
-              <text class="th" x="590" y="309" text-anchor="middle" dominant-baseline="central">Granger causality</text>
-              <text class="ts" x="590" y="326" text-anchor="middle" dominant-baseline="central">temporal test</text>
-            </g>
-           
+            <g class="node c-teal"><rect x="20" y="292" width="140" height="36" rx="8" stroke-width="0.5"/><text class="th" x="90" y="310" text-anchor="middle" dominant-baseline="central">Data preprocessing</text></g>
+            <g class="node c-teal"><rect x="186" y="292" width="140" height="48" rx="8" stroke-width="0.5"/><text class="th" x="256" y="309" text-anchor="middle" dominant-baseline="central">Extract &amp; transform</text><text class="ts" x="256" y="326" text-anchor="middle" dominant-baseline="central">event coordinates</text></g>
+            <g class="node c-blue"><rect x="354" y="292" width="140" height="48" rx="8" stroke-width="0.5"/><text class="th" x="424" y="309" text-anchor="middle" dominant-baseline="central">Stationarity test</text><text class="ts" x="424" y="326" text-anchor="middle" dominant-baseline="central">spatial → time-series</text></g>
+            <g class="node c-blue"><rect x="520" y="292" width="140" height="48" rx="8" stroke-width="0.5"/><text class="th" x="590" y="309" text-anchor="middle" dominant-baseline="central">Granger causality</text><text class="ts" x="590" y="326" text-anchor="middle" dominant-baseline="central">temporal test</text></g>
             <line x1="90"  y1="328" x2="90"  y2="360" class="arr" marker-end="url(#arrow)"/>
             <line x1="256" y1="340" x2="256" y2="360" class="arr" marker-end="url(#arrow)"/>
-            <!-- Col3 & Col4 dashed lines down to merge point -->
             <line x1="424" y1="340" x2="424" y2="600" class="dim-dash"/>
             <line x1="590" y1="340" x2="590" y2="600" class="dim-dash"/>
-           
-            <!-- ROW 4 -->
-            <g class="node c-teal">
-              <rect x="20" y="360" width="140" height="48" rx="8" stroke-width="0.5"/>
-              <text class="th" x="90" y="377" text-anchor="middle" dominant-baseline="central">Convert to</text>
-              <text class="ts" x="90" y="394" text-anchor="middle" dominant-baseline="central">multi-channel .npy (6ch)</text>
-            </g>
-            <g class="node c-teal">
-              <rect x="186" y="360" width="140" height="48" rx="8" stroke-width="0.5"/>
-              <text class="th" x="256" y="377" text-anchor="middle" dominant-baseline="central">Ground truth</text>
-              <text class="ts" x="256" y="394" text-anchor="middle" dominant-baseline="central">labels for training</text>
-            </g>
-           
+            <g class="node c-teal"><rect x="20" y="360" width="140" height="48" rx="8" stroke-width="0.5"/><text class="th" x="90" y="377" text-anchor="middle" dominant-baseline="central">Convert to</text><text class="ts" x="90" y="394" text-anchor="middle" dominant-baseline="central">multi-channel .npy (6ch)</text></g>
+            <g class="node c-teal"><rect x="186" y="360" width="140" height="48" rx="8" stroke-width="0.5"/><text class="th" x="256" y="377" text-anchor="middle" dominant-baseline="central">Ground truth</text><text class="ts" x="256" y="394" text-anchor="middle" dominant-baseline="central">labels for training</text></g>
             <line x1="90"  y1="408" x2="90"  y2="440" class="arr" marker-end="url(#arrow)"/>
             <line x1="256" y1="408" x2="256" y2="440" class="arr" marker-end="url(#arrow)"/>
-           
-            <!-- REPRESENTATION LEARNING -->
             <text class="ts" x="90" y="434" text-anchor="middle" dominant-baseline="central" fill="rgba(124,115,255,0.5)" font-family="'DM Mono',monospace" font-size="8">REPRESENTATION LEARNING</text>
-            <g class="node c-coral">
-              <rect x="20" y="440" width="140" height="48" rx="8" stroke-width="0.5"/>
-              <text class="th" x="90" y="457" text-anchor="middle" dominant-baseline="central">Pre-training</text>
-              <text class="ts" x="90" y="474" text-anchor="middle" dominant-baseline="central">SimCLR architecture</text>
-            </g>
-           
-            <!-- OBJECT DETECTION MODELING -->
+            <g class="node c-coral"><rect x="20" y="440" width="140" height="48" rx="8" stroke-width="0.5"/><text class="th" x="90" y="457" text-anchor="middle" dominant-baseline="central">Pre-training</text><text class="ts" x="90" y="474" text-anchor="middle" dominant-baseline="central">SimCLR architecture</text></g>
             <text class="ts" x="256" y="434" text-anchor="middle" dominant-baseline="central" fill="rgba(124,115,255,0.5)" font-family="'DM Mono',monospace" font-size="8">OBJECT DETECTION</text>
-            <g class="node c-purple">
-              <rect x="186" y="440" width="140" height="48" rx="8" stroke-width="0.5"/>
-              <text class="th" x="256" y="457" text-anchor="middle" dominant-baseline="central">Transfer learning</text>
-              <text class="ts" x="256" y="474" text-anchor="middle" dominant-baseline="central">graft encoder → YOLOv5</text>
-            </g>
-           
+            <g class="node c-purple"><rect x="186" y="440" width="140" height="48" rx="8" stroke-width="0.5"/><text class="th" x="256" y="457" text-anchor="middle" dominant-baseline="central">Transfer learning</text><text class="ts" x="256" y="474" text-anchor="middle" dominant-baseline="central">graft encoder → YOLOv5</text></g>
             <line x1="90"  y1="488" x2="90"  y2="518" class="arr" marker-end="url(#arrow)"/>
             <line x1="256" y1="488" x2="256" y2="518" class="arr" marker-end="url(#arrow)"/>
-           
-            <g class="node c-coral">
-              <rect x="20" y="518" width="140" height="48" rx="8" stroke-width="0.5"/>
-              <text class="th" x="90" y="535" text-anchor="middle" dominant-baseline="central">Save weights</text>
-              <text class="ts" x="90" y="552" text-anchor="middle" dominant-baseline="central">trained encoder</text>
-            </g>
-            <g class="node c-purple">
-              <rect x="186" y="518" width="140" height="48" rx="8" stroke-width="0.5"/>
-              <text class="th" x="256" y="535" text-anchor="middle" dominant-baseline="central">Train YOLOv5</text>
-              <text class="ts" x="256" y="552" text-anchor="middle" dominant-baseline="central">target ground truth</text>
-            </g>
-           
-            <!-- Save Weights → Train YOLOv5 -->
+            <g class="node c-coral"><rect x="20" y="518" width="140" height="48" rx="8" stroke-width="0.5"/><text class="th" x="90" y="535" text-anchor="middle" dominant-baseline="central">Save weights</text><text class="ts" x="90" y="552" text-anchor="middle" dominant-baseline="central">trained encoder</text></g>
+            <g class="node c-purple"><rect x="186" y="518" width="140" height="48" rx="8" stroke-width="0.5"/><text class="th" x="256" y="535" text-anchor="middle" dominant-baseline="central">Train YOLOv5</text><text class="ts" x="256" y="552" text-anchor="middle" dominant-baseline="central">target ground truth</text></g>
             <line x1="160" y1="542" x2="184" y2="542" class="arr" marker-end="url(#arrow)"/>
-           
             <line x1="256" y1="566" x2="256" y2="596" class="arr" marker-end="url(#arrow)"/>
-           
-            <!-- PRECURSOR FEATURE EXTRACTION -->
             <text class="ts" x="256" y="590" text-anchor="middle" dominant-baseline="central" fill="rgba(124,115,255,0.5)" font-family="'DM Mono',monospace" font-size="8">PRECURSOR FEATURE EXTRACTION</text>
-            <g class="node c-purple">
-              <rect x="186" y="596" width="140" height="48" rx="8" stroke-width="0.5"/>
-              <text class="th" x="256" y="613" text-anchor="middle" dominant-baseline="central">Detect precursors</text>
-              <text class="ts" x="256" y="630" text-anchor="middle" dominant-baseline="central">on new images</text>
-            </g>
-           
-            <!-- Merge: col3 & col4 dashed lines join into precursor box -->
+            <g class="node c-purple"><rect x="186" y="596" width="140" height="48" rx="8" stroke-width="0.5"/><text class="th" x="256" y="613" text-anchor="middle" dominant-baseline="central">Detect precursors</text><text class="ts" x="256" y="630" text-anchor="middle" dominant-baseline="central">on new images</text></g>
             <line x1="424" y1="600" x2="328" y2="618" class="dim-dash" marker-end="url(#arrow)"/>
             <line x1="590" y1="600" x2="590" y2="620" class="dim-dash"/>
             <line x1="590" y1="620" x2="328" y2="620" class="dim-dash" marker-end="url(#arrow)"/>
-           
             <line x1="256" y1="644" x2="256" y2="674" class="arr" marker-end="url(#arrow)"/>
-           
-            <!-- Bounding Box Output -->
-            <g class="node c-purple">
-              <rect x="186" y="674" width="140" height="48" rx="8" stroke-width="0.5"/>
-              <text class="th" x="256" y="691" text-anchor="middle" dominant-baseline="central">Bounding boxes</text>
-              <text class="ts" x="256" y="708" text-anchor="middle" dominant-baseline="central">AR, CH, SS coordinates</text>
-            </g>
-           
-            <!-- Route to Analytical Conclusion -->
+            <g class="node c-purple"><rect x="186" y="674" width="140" height="48" rx="8" stroke-width="0.5"/><text class="th" x="256" y="691" text-anchor="middle" dominant-baseline="central">Bounding boxes</text><text class="ts" x="256" y="708" text-anchor="middle" dominant-baseline="central">AR, CH, SS coordinates</text></g>
             <line x1="256" y1="722" x2="256" y2="752" class="dim"/>
             <line x1="256" y1="752" x2="340" y2="752" class="dim"/>
             <line x1="340" y1="752" x2="340" y2="772" class="arr" marker-end="url(#arrow)"/>
-           
-            <!-- ANALYTICAL CONCLUSION -->
-            <g class="node c-teal">
-              <rect x="100" y="772" width="480" height="60" rx="8" stroke-width="0.5"/>
-              <text class="th" x="340" y="795" text-anchor="middle" dominant-baseline="central">Analytical conclusion</text>
-              <text class="ts" x="340" y="815" text-anchor="middle" dominant-baseline="central">AR predictive potential — 3-day lag before sunspot appearance</text>
-            </g>
-           
+            <g class="node c-teal"><rect x="100" y="772" width="480" height="60" rx="8" stroke-width="0.5"/><text class="th" x="340" y="795" text-anchor="middle" dominant-baseline="central">Analytical conclusion</text><text class="ts" x="340" y="815" text-anchor="middle" dominant-baseline="central">AR predictive potential — 3-day lag before sunspot appearance</text></g>
             <line x1="340" y1="832" x2="340" y2="858" class="arr" marker-end="url(#arrow)"/>
-           
-            <!-- END -->
-            <g class="node c-purple">
-              <rect x="270" y="858" width="140" height="36" rx="18" stroke-width="0.5"/>
-              <text class="th" x="340" y="876" text-anchor="middle" dominant-baseline="central">End</text>
-            </g>
+            <g class="node c-purple"><rect x="270" y="858" width="140" height="36" rx="18" stroke-width="0.5"/><text class="th" x="340" y="876" text-anchor="middle" dominant-baseline="central">End</text></g>
           </svg>
         </div>
-        
+
         <div class="metric-bar">
           <div class="metric">
             <div class="metric-val">24k+</div>
@@ -1161,6 +1122,7 @@
       </div>
     </article>
 
+    <!-- Project 2: Lyra POS -->
     <article class="project-card fade-up">
       <div class="project-content">
         <div>
@@ -1172,7 +1134,7 @@
           <div class="quote-block">
             "Engineering is the bridge between the precision of Physics and the chaos of human needs."
           </div>
-          
+
           <div class="project-story">
             <div class="story-block">
               <h5>Context</h5>
@@ -1195,19 +1157,48 @@
         </div>
       </div>
 
+      <!-- ── Tablet Mockup Visual ──────────────────────────── -->
       <div class="project-visual-stack">
-        <!-- FIX: Lyra POS App mockup SVG -->
-        <div class="visual-main slider-container">
-          <img src="lyra02.jpg" alt="Antarmuka Lyra POS" class="slide-img" />
-          
-          <img src="lyra01.jpg" alt="Arsitektur Lyra POS" class="slide-img" />
+        <div class="tablet-wrapper">
+          <div class="tablet-frame">
+            <!-- Physical buttons -->
+            <div class="tablet-btn-left"></div>
+            <div class="tablet-btn-right tablet-btn-power"></div>
+            <div class="tablet-btn-right tablet-btn-vol-up"></div>
+            <div class="tablet-btn-right tablet-btn-vol-dn"></div>
+            <!-- Camera bar -->
+            <div class="tablet-camera-bar">
+              <div class="tablet-mic"></div>
+              <div class="tablet-camera"></div>
+            </div>
+            <!-- Screen with image slider -->
+            <div class="tablet-screen">
+              <div class="lyra-slide-track" id="lyraTrack">
+                <img src="lyra02.jpg" alt="Lyra POS — tampilan kasir" />
+                <img src="lyra01.jpg" alt="Lyra POS — tampilan produk" />
+              </div>
+            </div>
+            <!-- Home indicator -->
+            <div class="tablet-home-bar">
+              <div class="tablet-home-indicator"></div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <div class="tablet-controls">
+            <div class="tablet-caption">
+              <span class="tc-label" id="lyraLabel">01 / 02</span>
+              <span class="tc-title" id="lyraTitle">Tampilan Kasir</span>
+            </div>
+            <div class="tablet-nav">
+              <button class="t-arrow-btn" id="lyraPrev" aria-label="Gambar sebelumnya" disabled>&#8592;</button>
+              <button class="t-dot-btn active" data-lyra-idx="0" aria-label="Gambar 1"></button>
+              <button class="t-dot-btn" data-lyra-idx="1" aria-label="Gambar 2"></button>
+              <button class="t-arrow-btn" id="lyraNext" aria-label="Gambar berikutnya">&#8594;</button>
+            </div>
+          </div>
         </div>
-        
-        <div style="text-align: right; font-family: var(--mono); font-size: 0.65rem; color: var(--text3); margin-top: -0.5rem; letter-spacing: 0.1em;">
-          ← GESER UNTUK MENJELAJAH →
-        </div>
-        
-        <!-- FIX: Improved Lyra metrics with concrete values -->
+
         <div class="metric-bar">
           <div class="metric">
             <div class="metric-val">100%</div>
@@ -1234,7 +1225,6 @@
     </article>
   </section>
 
-  <!-- FIX: Updated contact section headline -->
   <section id="contact" class="fade-up">
     <div class="section-label">Connect</div>
     <h2>Let's Work Together</h2>
@@ -1254,7 +1244,7 @@
   </footer>
 
   <script>
-    // ── Scroll Animations ──────────────────────────────────────
+    // ── Scroll Animations ──────────────────────────────────
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1262,21 +1252,17 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { root: null, rootMargin: '0px', threshold: 0.1 });
-
+    }, { threshold: 0.1 });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    // ── FIX: Hamburger menu toggle ─────────────────────────────
+    // ── Hamburger Menu ─────────────────────────────────────
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
-
     hamburger.addEventListener('click', () => {
       const isOpen = mobileMenu.classList.toggle('open');
       hamburger.classList.toggle('open', isOpen);
       hamburger.setAttribute('aria-expanded', isOpen);
     });
-
-    // Close menu when a link is clicked
     document.querySelectorAll('.mobile-nav-link').forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu.classList.remove('open');
@@ -1284,8 +1270,6 @@
         hamburger.setAttribute('aria-expanded', false);
       });
     });
-
-    // Close menu on outside click
     document.addEventListener('click', (e) => {
       if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
         mobileMenu.classList.remove('open');
@@ -1293,6 +1277,47 @@
         hamburger.setAttribute('aria-expanded', false);
       }
     });
+
+    // ── Lyra POS Tablet Slider ─────────────────────────────
+    (function () {
+      const slides = [
+        { label: '01 / 02', title: 'Tampilan Kasir' },
+        { label: '02 / 02', title: 'Tampilan Produk' },
+      ];
+      let current = 0;
+      const track  = document.getElementById('lyraTrack');
+      const dots   = document.querySelectorAll('[data-lyra-idx]');
+      const prev   = document.getElementById('lyraPrev');
+      const next   = document.getElementById('lyraNext');
+      const label  = document.getElementById('lyraLabel');
+      const title  = document.getElementById('lyraTitle');
+
+      function goTo(idx) {
+        current = idx;
+        track.style.transform = `translateX(-${idx * 50}%)`;
+        dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+        prev.disabled = idx === 0;
+        next.disabled = idx === slides.length - 1;
+        label.textContent = slides[idx].label;
+        title.textContent = slides[idx].title;
+      }
+
+      prev.addEventListener('click', () => { if (current > 0) goTo(current - 1); });
+      next.addEventListener('click', () => { if (current < slides.length - 1) goTo(current + 1); });
+      dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.lyraIdx)));
+
+      // Touch swipe support
+      let startX = 0;
+      const screen = track.parentElement;
+      screen.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      screen.addEventListener('touchend', e => {
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) {
+          if (diff > 0 && current < slides.length - 1) goTo(current + 1);
+          if (diff < 0 && current > 0) goTo(current - 1);
+        }
+      }, { passive: true });
+    })();
   </script>
 </body>
 </html>
