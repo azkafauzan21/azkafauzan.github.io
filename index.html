@@ -890,54 +890,201 @@
       <div class="project-visual-stack">
         <!-- FIX: SDO Pipeline Architecture Diagram (SVG) -->
         <div class="visual-main">
-          <svg width="100%" height="100%" viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
-            <defs>
-              <radialGradient id="sdoglow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#7c73ff" stop-opacity="0.08"/>
-                <stop offset="100%" stop-color="transparent"/>
-              </radialGradient>
-            </defs>
-            <rect width="440" height="300" fill="#0d0d18"/>
-            <rect width="440" height="300" fill="url(#sdoglow)"/>
-            <!-- Flow nodes -->
-            <!-- Node 1: NASA SDO -->
-            <rect x="14" y="110" width="76" height="40" rx="3" fill="#1a1a26" stroke="rgba(124,115,255,0.3)" stroke-width="1"/>
-            <text x="52" y="127" text-anchor="middle" font-family="monospace" font-size="7" fill="#7c73ff" letter-spacing="0.5">NASA SDO</text>
-            <text x="52" y="140" text-anchor="middle" font-family="monospace" font-size="6.5" fill="rgba(168,168,192,0.7)">24k FITS</text>
-            <!-- Arrow -->
-            <line x1="90" y1="130" x2="108" y2="130" stroke="rgba(124,115,255,0.5)" stroke-width="1"/>
-            <polygon points="108,127 113,130 108,133" fill="rgba(124,115,255,0.5)"/>
-            <!-- Node 2: Preprocessing -->
-            <rect x="113" y="110" width="76" height="40" rx="3" fill="#1a1a26" stroke="rgba(124,115,255,0.3)" stroke-width="1"/>
-            <text x="151" y="127" text-anchor="middle" font-family="monospace" font-size="7" fill="#7c73ff" letter-spacing="0.5">PREPROCESS</text>
-            <text x="151" y="140" text-anchor="middle" font-family="monospace" font-size="6.5" fill="rgba(168,168,192,0.7)">6-ch Tensor</text>
-            <!-- Arrow -->
-            <line x1="189" y1="130" x2="207" y2="130" stroke="rgba(124,115,255,0.5)" stroke-width="1"/>
-            <polygon points="207,127 212,130 207,133" fill="rgba(124,115,255,0.5)"/>
-            <!-- Node 3: SimCLR -->
-            <rect x="212" y="110" width="76" height="40" rx="3" fill="#1a1a26" stroke="rgba(255,125,169,0.35)" stroke-width="1"/>
-            <text x="250" y="127" text-anchor="middle" font-family="monospace" font-size="7" fill="#ff7da9" letter-spacing="0.5">SimCLR</text>
-            <text x="250" y="140" text-anchor="middle" font-family="monospace" font-size="6.5" fill="rgba(168,168,192,0.7)">ResNet-34</text>
-            <!-- Arrow -->
-            <line x1="288" y1="130" x2="306" y2="130" stroke="rgba(124,115,255,0.5)" stroke-width="1"/>
-            <polygon points="306,127 311,130 306,133" fill="rgba(124,115,255,0.5)"/>
-            <!-- Node 4: YOLOv5x -->
-            <rect x="311" y="110" width="76" height="40" rx="3" fill="#1a1a26" stroke="rgba(124,115,255,0.3)" stroke-width="1"/>
-            <text x="349" y="127" text-anchor="middle" font-family="monospace" font-size="7" fill="#7c73ff" letter-spacing="0.5">YOLOv5x</text>
-            <text x="349" y="140" text-anchor="middle" font-family="monospace" font-size="6.5" fill="rgba(168,168,192,0.7)">Detection</text>
-            <!-- Output arrow down -->
-            <line x1="349" y1="150" x2="349" y2="175" stroke="rgba(124,115,255,0.4)" stroke-width="1"/>
-            <polygon points="346,175 349,180 352,175" fill="rgba(124,115,255,0.4)"/>
-            <!-- Output node -->
-            <rect x="295" y="180" width="108" height="40" rx="3" fill="rgba(124,115,255,0.08)" stroke="rgba(124,115,255,0.4)" stroke-width="1"/>
-            <text x="349" y="197" text-anchor="middle" font-family="monospace" font-size="7" fill="#7c73ff" letter-spacing="0.5">FORECAST</text>
-            <text x="349" y="210" text-anchor="middle" font-family="monospace" font-size="6.5" fill="rgba(168,168,192,0.7)">3-day lead time</text>
-            <!-- Snodgrass label -->
-            <text x="151" y="185" text-anchor="middle" font-family="monospace" font-size="6" fill="rgba(112,112,144,0.6)">Snodgrass</text>
-            <text x="151" y="195" text-anchor="middle" font-family="monospace" font-size="6" fill="rgba(112,112,144,0.6)">Correction</text>
-            <line x1="151" y1="170" x2="151" y2="198" stroke="rgba(112,112,144,0.3)" stroke-width="0.8" stroke-dasharray="3 3"/>
-            <!-- Corner annotation -->
-            <text x="14" y="285" font-family="monospace" font-size="7" fill="rgba(112,112,144,0.4)" letter-spacing="1">PIPELINE ARCHITECTURE · SDO PROJECT</text>
+              svg{
+                  width:100%;
+                  max-width:1600px;
+                  height:auto;
+              }
+          
+              .main-box{
+                  fill:#12243b;
+                  stroke:#5ca9ff;
+                  stroke-width:2.5;
+              }
+          
+              .sub-box{
+                  fill:#1b3352;
+                  stroke:#77b7ff;
+                  stroke-width:1.8;
+              }
+          
+              .terminal{
+                  fill:#3b82f6;
+                  stroke:#8ec5ff;
+                  stroke-width:2;
+              }
+          
+              .arrow{
+                  stroke:#7fb8ff;
+                  stroke-width:2.5;
+                  fill:none;
+                  marker-end:url(#arrowhead);
+              }
+          
+              .title{
+                  fill:#d9ecff;
+                  font-size:24px;
+                  font-weight:700;
+                  text-anchor:middle;
+              }
+          
+              .text{
+                  fill:#e7f1ff;
+                  font-size:18px;
+                  text-anchor:middle;
+              }
+          
+              .small{
+                  fill:#d8e8ff;
+                  font-size:16px;
+                  text-anchor:middle;
+              }
+          </style>
+          </head>
+          
+          <body>
+          
+          <svg viewBox="0 0 1800 1150">
+          
+              <defs>
+                  <marker id="arrowhead" markerWidth="10" markerHeight="7"
+                          refX="9" refY="3.5" orient="auto">
+                      <polygon points="0 0, 10 3.5, 0 7" fill="#7fb8ff"/>
+                  </marker>
+              </defs>
+          
+              <!-- START -->
+              <rect x="780" y="30" rx="40" ry="40" width="240" height="80" class="terminal"/>
+              <text x="900" y="80" class="title">START</text>
+          
+              <!-- DATA ACQUISITION -->
+              <rect x="760" y="170" rx="14" ry="14" width="280" height="80" class="main-box"/>
+              <text x="900" y="220" class="title">DATA ACQUISITION</text>
+          
+              <!-- Arrow -->
+              <line x1="900" y1="110" x2="900" y2="170" class="arrow"/>
+          
+              <!-- IMAGE DATA -->
+              <rect x="70" y="320" rx="30" ry="30" width="360" height="500" class="main-box"/>
+              <text x="250" y="370" class="title">IMAGE DATA</text>
+          
+              <rect x="110" y="420" rx="12" ry="12" width="280" height="100" class="sub-box"/>
+              <text x="250" y="460" class="text">Collect SDO Satellite</text>
+              <text x="250" y="495" class="text">Image (AIA &amp; HMI)</text>
+          
+              <rect x="110" y="570" rx="12" ry="12" width="280" height="100" class="sub-box"/>
+              <text x="250" y="630" class="text">Data Preprocessing</text>
+          
+              <rect x="110" y="720" rx="12" ry="12" width="280" height="100" class="sub-box"/>
+              <text x="250" y="760" class="small">Convert SDO Image</text>
+              <text x="250" y="790" class="small">to Multi-Channel</text>
+              <text x="250" y="820" class="small">(.npy, 6 Channels)</text>
+          
+              <!-- CATALOG DATA -->
+              <rect x="520" y="320" rx="30" ry="30" width="360" height="400" class="main-box"/>
+              <text x="700" y="370" class="title">CATALOG DATA</text>
+          
+              <rect x="560" y="430" rx="12" ry="12" width="280" height="100" class="sub-box"/>
+              <text x="700" y="470" class="text">Collect Solar Event</text>
+              <text x="700" y="505" class="text">Data (HEK Catalog)</text>
+          
+              <rect x="560" y="590" rx="12" ry="12" width="280" height="100" class="sub-box"/>
+              <text x="700" y="630" class="small">Extract &amp; Transform</text>
+              <text x="700" y="660" class="small">Event Coordinates</text>
+              <text x="700" y="690" class="small">for Ground Truth</text>
+          
+              <!-- SPATIOTEMPORAL -->
+              <rect x="970" y="320" rx="30" ry="30" width="360" height="400" class="main-box"/>
+              <text x="1150" y="370" class="title">SPATIOTEMPORAL</text>
+              <text x="1150" y="405" class="title">ANALYSIS</text>
+          
+              <rect x="1010" y="430" rx="12" ry="12" width="280" height="120" class="sub-box"/>
+              <text x="1150" y="470" class="small">Apply Differential</text>
+              <text x="1150" y="500" class="small">Rotation Correction to</text>
+              <text x="1150" y="530" class="small">Bounding Boxes</text>
+          
+              <rect x="1010" y="590" rx="12" ry="12" width="280" height="120" class="sub-box"/>
+              <text x="1150" y="630" class="small">Perform Stationarity</text>
+              <text x="1150" y="660" class="small">Test to Convert</text>
+              <text x="1150" y="690" class="small">Spatial Data to</text>
+              <text x="1150" y="720" class="small">Time-Series</text>
+          
+              <!-- STATISTICAL -->
+              <rect x="1420" y="320" rx="30" ry="30" width="360" height="400" class="main-box"/>
+              <text x="1600" y="370" class="title">STATISTICAL VALIDATION</text>
+          
+              <rect x="1460" y="430" rx="12" ry="12" width="280" height="120" class="sub-box"/>
+              <text x="1600" y="480" class="small">Test Predictive</text>
+              <text x="1600" y="515" class="small">Significance: Pearson</text>
+              <text x="1600" y="550" class="small">Correlation</text>
+          
+              <rect x="1460" y="590" rx="12" ry="12" width="280" height="120" class="sub-box"/>
+              <text x="1600" y="640" class="small">Test Temporal</text>
+              <text x="1600" y="675" class="small">Causality: Granger</text>
+              <text x="1600" y="710" class="small">Causality Test</text>
+          
+              <!-- REPRESENTATION -->
+              <rect x="70" y="900" rx="30" ry="30" width="360" height="300" class="main-box"/>
+              <text x="250" y="950" class="title">REPRESENTATION</text>
+              <text x="250" y="985" class="title">LEARNING</text>
+          
+              <rect x="110" y="1030" rx="12" ry="12" width="280" height="90" class="sub-box"/>
+              <text x="250" y="1070" class="small">Pre-Training: SimCLR</text>
+              <text x="250" y="1100" class="small">Architecture</text>
+          
+              <!-- OBJECT DETECTION -->
+              <rect x="520" y="900" rx="30" ry="30" width="360" height="300" class="main-box"/>
+              <text x="700" y="950" class="title">OBJECT DETECTION</text>
+              <text x="700" y="985" class="title">MODELING</text>
+          
+              <rect x="560" y="1030" rx="12" ry="12" width="280" height="90" class="sub-box"/>
+              <text x="700" y="1070" class="small">Transfer Learning:</text>
+              <text x="700" y="1100" class="small">Encoder Weights to YOLOv5</text>
+          
+              <!-- FEATURE EXTRACTION -->
+              <rect x="970" y="900" rx="30" ry="30" width="360" height="300" class="main-box"/>
+              <text x="1150" y="950" class="title">PRECURSOR FEATURE</text>
+              <text x="1150" y="985" class="title">EXTRACTION</text>
+          
+              <rect x="1010" y="1030" rx="12" ry="12" width="280" height="90" class="sub-box"/>
+              <text x="1150" y="1070" class="small">Detect Precursors</text>
+              <text x="1150" y="1100" class="small">on New Images</text>
+          
+              <!-- CONCLUSION -->
+              <rect x="1420" y="900" rx="30" ry="30" width="360" height="300" class="main-box"/>
+              <text x="1600" y="960" class="title">ANALYTICAL CONCLUSION</text>
+          
+              <ellipse cx="1600" cy="1080" rx="130" ry="80"
+                       fill="#1b3352"
+                       stroke="#77b7ff"
+                       stroke-width="2"/>
+          
+              <text x="1600" y="1050" class="small">Conclusion:</text>
+              <text x="1600" y="1080" class="small">AR Has Significant</text>
+              <text x="1600" y="1110" class="small">Predictive Potential</text>
+          
+              <!-- END -->
+              <rect x="1480" y="1260" rx="40" ry="40" width="240" height="80" class="terminal"/>
+              <text x="1600" y="1310" class="title">END</text>
+          
+              <!-- CONNECTIONS -->
+              <line x1="900" y1="250" x2="250" y2="320" class="arrow"/>
+              <line x1="900" y1="250" x2="700" y2="320" class="arrow"/>
+          
+              <line x1="250" y1="820" x2="250" y2="900" class="arrow"/>
+              <line x1="700" y1="720" x2="700" y2="900" class="arrow"/>
+          
+              <line x1="430" y1="1050" x2="520" y2="1050" class="arrow"/>
+              <line x1="880" y1="1050" x2="970" y2="1050" class="arrow"/>
+          
+              <line x1="1150" y1="900" x2="1150" y2="720" class="arrow"/>
+          
+              <line x1="1330" y1="520" x2="1420" y2="520" class="arrow"/>
+          
+              <line x1="1600" y1="720" x2="1600" y2="900" class="arrow"/>
+          
+              <line x1="1600" y1="1200" x2="1600" y2="1260" class="arrow"/>
+          
           </svg>
         </div>
         
