@@ -512,6 +512,8 @@ h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; }
   align-items: center;
   gap: 1.25rem;
   padding: 1rem 0 0.5rem;
+  align-self: stretch;
+  width: 100%;
 }
 .tablet-frame {
   position: relative;
@@ -552,10 +554,13 @@ h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; }
   overflow: hidden;
   background: #08080c;
   position: relative;
+  min-height: 0;
 }
 .lyra-slide-track {
   display: flex;
   width: 200%;
+  position: absolute;
+  inset: 0;
   height: 100%;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
