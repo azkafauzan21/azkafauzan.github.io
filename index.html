@@ -1,1233 +1,341 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Azka Fauzan — Applied AI & Computational Physics</title>
-  <meta name="description" content="A physicist who builds things with data. Specializing in deep learning architectures and computational modeling." />
-  
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Azka Fauzan — Applied AI & Computational Physics" />
-  <meta property="og:description" content="A computational physicist specializing in deep learning architectures and production engineering." />
-  <meta property="og:image" content="profile.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Azka Fauzan — Applied AI & Computational Physics" />
-  <meta name="twitter:description" content="A computational physicist specializing in deep learning architectures and production engineering." />
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
-  
-  <style>
-    /* ── Reset & Core Variables ────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+---
+layout: default
+title: "Azka Fauzan — Applied AI & Computational Physics"
+---
 
-    :root {
-      --bg:        #08080c; 
-      --bg2:       #12121a;
-      --bg3:       #1a1a26;
-      --surface:   rgba(26, 26, 46, 0.4);
-      --border:    rgba(255, 255, 255, 0.08);
-      --border-hi: rgba(255, 255, 255, 0.15);
-      
-      --accent:    #7c73ff; 
-      --accent-dim: rgba(124, 115, 255, 0.15);
-      --accent2:   #ff7da9;
-      
-      --text:      #f4f4f8;
-      --text2:     #a8a8c0; 
-      --text3:     #707090;
-      
-      --mono:      'DM Mono', monospace;
-      --serif:     'DM Serif Display', serif;
-      --sans:      'DM Sans', sans-serif;
-      
-      --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-layout">
+    <div class="hero-content fade-up">
+      <div class="availability-badge">
+        <span class="availability-dot"></span>
+        Open to Opportunities
+      </div>
+      <div class="hero-identity">Muhammad Azka Hafizha Fauzan</div>
+      <h1>Engineering Intelligence <br><em>from Raw Data.</em></h1>
+      <p class="hero-desc">
+        A computational physicist specializing in deep learning architectures and production engineering. I build systems that transform complex signals—from NASA satellite telemetry to real-time commercial operations—into deployed, actionable software.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View Case Studies</a>
+        <a href="{{ '/assets/docs/cv_azka_fauzan_public.pdf' | relative_url }}" download class="btn btn-ghost">Download CV</a>
+      </div>
+    </div>
+    <div class="hero-visual fade-up">
+      <div class="hero-visual-container">
+        <svg class="hero-abstract-render" viewBox="0 0 480 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <radialGradient id="rg1" cx="30%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#7c73ff" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#08080c" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="rg2" cx="75%" cy="70%" r="50%">
+              <stop offset="0%" stop-color="#ff7da9" stop-opacity="0.10"/>
+              <stop offset="100%" stop-color="#08080c" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="2" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <rect width="480" height="400" fill="#0d0d18"/>
+          <rect width="480" height="400" fill="url(#rg1)"/>
+          <rect width="480" height="400" fill="url(#rg2)"/>
+          <g stroke="rgba(124,115,255,0.07)" stroke-width="0.5">
+            <line x1="0" y1="50" x2="480" y2="50"/><line x1="0" y1="100" x2="480" y2="100"/>
+            <line x1="0" y1="150" x2="480" y2="150"/><line x1="0" y1="200" x2="480" y2="200"/>
+            <line x1="0" y1="250" x2="480" y2="250"/><line x1="0" y1="300" x2="480" y2="300"/>
+            <line x1="0" y1="350" x2="480" y2="350"/><line x1="80" y1="0" x2="80" y2="400"/>
+            <line x1="160" y1="0" x2="160" y2="400"/><line x1="240" y1="0" x2="240" y2="400"/>
+            <line x1="320" y1="0" x2="320" y2="400"/><line x1="400" y1="0" x2="400" y2="400"/>
+          </g>
+          <ellipse cx="280" cy="200" rx="140" ry="140" fill="none" stroke="rgba(124,115,255,0.12)" stroke-width="0.8"/>
+          <ellipse cx="280" cy="200" rx="100" ry="100" fill="none" stroke="rgba(124,115,255,0.18)" stroke-width="0.8"/>
+          <ellipse cx="280" cy="200" rx="60" ry="60" fill="none" stroke="rgba(124,115,255,0.25)" stroke-width="1"/>
+          <g filter="url(#glow)">
+            <circle cx="280" cy="200" r="4" fill="#7c73ff" opacity="0.9"/>
+            <circle cx="380" cy="200" r="2.5" fill="#7c73ff" opacity="0.7"/>
+            <circle cx="230" cy="140" r="2" fill="#ff7da9" opacity="0.8"/>
+            <circle cx="195" cy="230" r="1.5" fill="#7c73ff" opacity="0.6"/>
+            <circle cx="330" cy="130" r="1.5" fill="#7c73ff" opacity="0.5"/>
+            <circle cx="340" cy="270" r="2" fill="#ff7da9" opacity="0.6"/>
+          </g>
+          <g stroke="rgba(124,115,255,0.2)" stroke-width="0.8">
+            <line x1="280" y1="200" x2="380" y2="200"/>
+            <line x1="280" y1="200" x2="230" y2="140"/>
+            <line x1="280" y1="200" x2="195" y2="230"/>
+            <line x1="280" y1="200" x2="330" y2="130"/>
+            <line x1="280" y1="200" x2="340" y2="270"/>
+          </g>
+          <g stroke="rgba(255,125,169,0.15)" stroke-width="0.6" stroke-dasharray="3 5">
+            <path d="M 60 80 Q 120 60 180 90 Q 240 120 300 100" fill="none"/>
+            <path d="M 40 320 Q 100 300 160 330 Q 220 360 280 340" fill="none"/>
+          </g>
+          <text x="16" y="385" font-family="monospace" font-size="8" fill="rgba(112,112,144,0.5)" letter-spacing="1">img src="profile.jpg"</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
 
-    html { scroll-behavior: smooth; }
+<section id="about">
+  <div class="section-header fade-up">
+    <div class="section-label">Architecture & Philosophy</div>
+    <h2>Scientific Rigor.<br>Engineering Execution.</h2>
+  </div>
+  <div class="about-layout fade-up">
+    <div class="about-narrative">
+      <p>
+        My foundation is built on a <strong>Bachelor of Science in Physics</strong> from Universitas Pendidikan Indonesia. While studying the universe, I discovered a profound interest in the systems used to measure it.
+      </p>
+      <p>
+        I view machine learning and software engineering not just as coding, but as applied physics—managing states, optimizing constraints, and modeling reality through data. Whether processing <strong>11 years of solar tensors</strong> or engineering an <strong>offline-first POS architecture</strong> for local businesses, the goal remains the same: robust, scalable systems.
+      </p>
+      <p>
+        I am currently seeking opportunities where I can apply my analytical background to <strong>data engineering, machine learning, and systems architecture</strong>.
+      </p>
+    </div>
+    <div class="diff-list">
+      <div class="diff-item">
+        <h4>Physics Mindset</h4>
+        <p>Approaching data pipelines with an understanding of the underlying physical or business constraints, ensuring models respect reality rather than just statistical correlations.</p>
+      </div>
+      <div class="diff-item">
+        <h4>Deep Learning Architecture</h4>
+        <p>Beyond calling APIs. Experience in modifying state-of-the-art backbones (ResNet, YOLO) to handle multi-dimensional, non-standard datasets (like 32-bit floating-point astronomical arrays).</p>
+      </div>
+      <div class="diff-item">
+        <h4>Production Focused</h4>
+        <p>Code that lives outside isolated environments. Building resilient, offline-first mobile and web systems ensuring data integrity and seamless user experiences across constraints.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--sans);
-      font-weight: 300;
-      line-height: 1.7;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
+<section id="skills">
+  <div class="section-header fade-up">
+    <div class="section-label">Technical Arsenal</div>
+    <h2>Skills & Stack</h2>
+  </div>
+  <div class="skills-grid fade-up">
+    <div class="skill-group">
+      <div class="skill-group-title">Machine Learning</div>
+      <div class="skill-tags">
+        <span class="skill-tag">PyTorch</span>
+        <span class="skill-tag">SimCLR</span>
+        <span class="skill-tag">YOLOv5x</span>
+        <span class="skill-tag">ResNet</span>
+        <span class="skill-tag">Scikit-learn</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Data & Scientific</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">NumPy</span>
+        <span class="skill-tag">SunPy</span>
+        <span class="skill-tag">Pandas</span>
+        <span class="skill-tag">FITS</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Mobile & Frontend</div>
+      <div class="skill-tags">
+        <span class="skill-tag">React Native</span>
+        <span class="skill-tag">Android</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">HTML/CSS</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Backend & Database</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Supabase</span>
+        <span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">AsyncStorage</span>
+        <span class="skill-tag">REST APIs</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-    /* ── Cinematic Noise Overlay ───────────────────────────── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 9999;
-    }
-
-    /* ── Navigation ────────────────────────────────────────── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.25rem 4rem;
-      background: rgba(8, 8, 12, 0.7);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-logo {
-      font-family: var(--mono);
-      font-size: 0.8rem;
-      color: var(--text);
-      letter-spacing: 0.05em;
-    }
-    .nav-logo span { color: var(--accent); }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      color: var(--text2);
-      text-decoration: none;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: color var(--transition);
-    }
-    .nav-links a:hover { color: var(--text); }
-
-    .nav-hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-      background: none;
-      border: none;
-    }
-    .nav-hamburger span {
-      display: block;
-      width: 22px;
-      height: 1.5px;
-      background: var(--text2);
-      transition: var(--transition);
-    }
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-    .nav-mobile-menu {
-      display: none;
-      position: fixed;
-      top: 60px; left: 0; right: 0;
-      background: rgba(8, 8, 12, 0.97);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      padding: 2rem;
-      z-index: 99;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-    .nav-mobile-menu.open { display: flex; }
-    .nav-mobile-menu a {
-      font-family: var(--mono);
-      font-size: 1rem;
-      color: var(--text2);
-      text-decoration: none;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: color var(--transition);
-      padding: 0.5rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-mobile-menu a:hover { color: var(--text); }
-
-    /* ── Availability Badge ─────────────────────────────────── */
-    .availability-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      color: #4ade80;
-      background: rgba(74, 222, 128, 0.08);
-      border: 1px solid rgba(74, 222, 128, 0.2);
-      padding: 0.3rem 0.75rem;
-      border-radius: 100px;
-      margin-bottom: 1.25rem;
-      letter-spacing: 0.08em;
-    }
-    .availability-dot {
-      width: 6px; height: 6px;
-      background: #4ade80;
-      border-radius: 50%;
-      animation: pulse-green 2s infinite;
-    }
-    @keyframes pulse-green {
-      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74,222,128,0.4); }
-      50% { opacity: 0.7; box-shadow: 0 0 0 4px rgba(74,222,128,0); }
-    }
-
-    /* ── Typography & Base Elements ────────────────────────── */
-    h1, h2, h3 { font-family: var(--serif); font-weight: normal; }
-    
-    .section-label {
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      color: var(--accent);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .section-label::before {
-      content: '';
-      display: inline-block;
-      width: 24px;
-      height: 1px;
-      background: var(--accent);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.75rem;
-      border-radius: 4px;
-      font-family: var(--mono);
-      font-size: 0.8rem;
-      letter-spacing: 0.05em;
-      text-decoration: none;
-      transition: var(--transition);
-      cursor: pointer;
-      border: 1px solid transparent;
-    }
-    .btn-primary {
-      background: var(--text);
-      color: var(--bg);
-      font-weight: 500;
-    }
-    .btn-primary:hover {
-      background: var(--accent);
-      color: #fff;
-    }
-    .btn-ghost {
-      background: transparent;
-      color: var(--text);
-      border-color: var(--border-hi);
-    }
-    .btn-ghost:hover {
-      border-color: var(--text);
-      background: rgba(255,255,255,0.03);
-    }
-    .btn-link {
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      color: var(--text2);
-      text-decoration: none;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 2px;
-      transition: var(--transition);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-    }
-    .btn-link:hover {
-      color: var(--accent);
-      border-color: var(--accent);
-    }
-    .btn-link[aria-disabled="true"],
-    .btn-link.disabled {
-      opacity: 0.35;
-      pointer-events: none;
-      cursor: default;
-    }
-    
-    .quote-block {
-      border-left: 2px solid var(--accent);
-      padding-left: 1.5rem;
-      margin-bottom: 2rem;
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      color: var(--text2);
-      font-style: italic;
-    }
-
-    /* ── Hero Section ──────────────────────────────────────── */
-    #hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 8rem 4rem 4rem;
-      position: relative;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 80% 20%, var(--accent-dim) 0%, transparent 40%);
-      opacity: 0.5;
-      z-index: -1;
-    }
-
-    .hero-grid-layout {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 4rem;
-      align-items: center;
-      width: 100%;
-    }
-
-    .hero-content { position: relative; z-index: 2; }
-
-    .hero-identity {
-      font-family: var(--mono);
-      font-size: 0.8rem;
-      color: var(--text2);
-      letter-spacing: 0.05em;
-      margin-bottom: 1.5rem;
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-      line-height: 1.1;
-      color: var(--text);
-      margin-bottom: 1.5rem;
-    }
-    h1 em {
-      font-style: italic;
-      color: var(--text3);
-    }
-
-    .hero-desc {
-      font-size: 1.1rem;
-      color: var(--text2);
-      max-width: 580px;
-      margin-bottom: 2.5rem;
-      line-height: 1.7;
-    }
-
-    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-    .hero-visual-container {
-      position: relative;
-      height: 400px;
-      border: 1px solid var(--border);
-      background: var(--bg2);
-      border-radius: 4px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .hero-abstract-render {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      inset: 0;
-    }
-
-    /* ── Sections Base ─────────────────────────────────────── */
-    section {
-      padding: 8rem 4rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .section-header { margin-bottom: 4rem; }
-    h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; }
-
-    /* ── About ─────────────────────────────────────────────── */
-    .about-layout {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 5rem;
-    }
-    
-    .about-narrative {
-      font-size: 1.05rem;
-      color: var(--text2);
-      line-height: 1.8;
-    }
-    .about-narrative p { margin-bottom: 1.5rem; }
-    .about-narrative strong { color: var(--text); font-weight: 500; }
-
-    .diff-list {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-    .diff-item {
-      padding-left: 1.5rem;
-      border-left: 1px solid var(--border-hi);
-    }
-    .diff-item h4 {
-      font-family: var(--mono);
-      font-size: 0.85rem;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 0.5rem;
-    }
-    .diff-item p {
-      font-size: 0.95rem;
-      color: var(--text2);
-      line-height: 1.6;
-    }
-
-    /* ── Skills ────────────────────────────────────────────── */
-    #skills {
-      padding: 0 4rem 6rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2.5rem;
-    }
-    .skill-group {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1.5rem;
-      transition: var(--transition);
-    }
-    .skill-group:hover { border-color: var(--border-hi); }
-    .skill-group-title {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      margin-bottom: 1rem;
-    }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .skill-tag {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      color: var(--text2);
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-      padding: 0.2rem 0.55rem;
-      border-radius: 2px;
-    }
-
-    /* ── Projects ──────────────────────────────────────────── */
-    .project-card {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 3rem;
-      margin-bottom: 4rem;
-      transition: var(--transition);
-    }
-    .project-card:hover {
-      border-color: var(--border-hi);
-      background: var(--surface);
-    }
-
-    .project-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .project-meta { margin-bottom: 2rem; }
-    .project-tag {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text3);
-      margin-bottom: 1rem;
-      display: block;
-    }
-    .project-title {
-      font-family: var(--serif);
-      font-size: 2rem;
-      color: var(--text);
-      line-height: 1.2;
-      margin-bottom: 0.5rem;
-    }
-
-    .project-story {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      margin-bottom: 2.5rem;
-    }
-    .story-block h5 {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 0.25rem;
-    }
-    .story-block p {
-      font-size: 0.9rem;
-      color: var(--text2);
-      line-height: 1.6;
-    }
-
-    .project-actions {
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-      margin-top: auto;
-    }
-
-    .project-visual-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .visual-main {
-      width: 100%;
-      height: 300px;
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      position: relative;
-    }
-    .visual-main img { width: 100%; height: 100%; object-fit: cover; }
-
-    /* ── Tablet Mockup (Lyra POS) ──────────────────────────── */
-    .tablet-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.25rem;
-      padding: 1rem 0 0.5rem;
-    }
-    .tablet-frame {
-      position: relative;
-      width: 100%;
-      max-width: 480px;
-      background: #1c1c24;
-      border-radius: 26px;
-      padding: 18px 14px 22px;
-      border: 2px solid #2e2e3c;
-      box-shadow:
-        0 0 0 1px #0a0a0e,
-        inset 0 0 0 1px #38384a,
-        0 24px 48px rgba(0,0,0,0.5);
-    }
-    .tablet-camera-bar {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-    .tablet-camera {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: #28283a;
-      border: 1px solid #3c3c50;
-    }
-    .tablet-mic {
-      width: 30px; height: 5px;
-      border-radius: 3px;
-      background: #28283a;
-      border: 1px solid #3c3c50;
-    }
-    .tablet-screen {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      border-radius: 8px;
-      overflow: hidden;
-      background: #08080c;
-      position: relative;
-    }
-    .lyra-slide-track {
-      display: flex;
-      width: 200%;
-      height: 100%;
-      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .lyra-slide-track img {
-      width: 50%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top;
-      flex-shrink: 0;
-      display: block;
-    }
-    .tablet-home-bar {
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
-    }
-    .tablet-home-indicator {
-      width: 72px; height: 4px;
-      border-radius: 2px;
-      background: #3a3a50;
-    }
-    /* Physical buttons */
-    .tablet-btn-right {
-      position: absolute;
-      right: -4px;
-      background: #222230;
-      border-radius: 0 3px 3px 0;
-      border: 1.5px solid #2e2e3c;
-      border-left: none;
-    }
-    .tablet-btn-power  { top: 52px;  width: 4px; height: 34px; }
-    .tablet-btn-vol-up { top: 98px;  width: 3px; height: 22px; }
-    .tablet-btn-vol-dn { top: 128px; width: 3px; height: 22px; }
-    .tablet-btn-left {
-      position: absolute;
-      left: -4px;
-      top: 72px;
-      width: 3px; height: 48px;
-      background: #222230;
-      border-radius: 3px 0 0 3px;
-      border: 1.5px solid #2e2e3c;
-      border-right: none;
-    }
-    /* Controls below tablet */
-    .tablet-controls {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.6rem;
-    }
-    .tablet-caption {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2px;
-    }
-    .tc-label {
-      font-family: var(--mono);
-      font-size: 0.62rem;
-      color: var(--text3);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-    .tc-title {
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      color: var(--text2);
-    }
-    .tablet-nav {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .t-arrow-btn {
-      width: 30px; height: 30px;
-      border-radius: 50%;
-      border: 1px solid var(--border-hi);
-      background: transparent;
-      color: var(--text);
-      cursor: pointer;
-      font-size: 13px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition);
-      padding: 0;
-      line-height: 1;
-    }
-    .t-arrow-btn:hover { border-color: var(--text); background: rgba(255,255,255,0.04); }
-    .t-arrow-btn:disabled { opacity: 0.25; cursor: default; pointer-events: none; }
-    .t-dot-btn {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      border: none;
-      background: var(--border-hi);
-      cursor: pointer;
-      padding: 0;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .t-dot-btn.active {
-      background: var(--accent);
-      transform: scale(1.35);
-    }
-
-    /* ── Metrics Highlight ─────────────────────────────────── */
-    .metric-bar {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      background: var(--bg3);
-      padding: 1.5rem;
-      border-radius: 4px;
-      border: 1px solid var(--border);
-      margin-top: 1rem;
-    }
-    .metric { text-align: center; border-right: 1px solid var(--border); }
-    .metric:last-child { border-right: none; }
-    .metric-val {
-      font-family: var(--serif);
-      font-size: 1.25rem;
-      color: var(--text);
-    }
-    .metric-label {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      color: var(--text3);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-top: 0.25rem;
-    }
-
-    .tech-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border);
-    }
-    .tech-badge {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      color: var(--text3);
-      background: rgba(255,255,255,0.02);
-      padding: 0.2rem 0.5rem;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-    }
-
-    /* ── Contact & Footer ──────────────────────────────────── */
-    #contact {
-      text-align: center;
-      padding: 8rem 4rem 4rem;
-    }
-    #contact .section-label { justify-content: center; }
-    #contact .section-label::before { display: none; }
-    .contact-desc {
-      color: var(--text2);
-      max-width: 500px;
-      margin: 1.5rem auto 3rem;
-    }
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem 4rem;
-      display: flex;
-      justify-content: space-between;
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      color: var(--text3);
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    /* ── Animations ────────────────────────────────────────── */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ── Responsive ────────────────────────────────────────── */
-    @media (max-width: 1024px) {
-      .project-card { grid-template-columns: 1fr; }
-      .visual-main { height: auto; min-height: 250px; }
-    }
-    @media (max-width: 768px) {
-      nav { padding: 1.25rem 2rem; }
-      .nav-links { display: none; }
-      .nav-hamburger { display: flex; }
-      
-      #hero { padding: 8rem 2rem 4rem; }
-      .hero-grid-layout { grid-template-columns: 1fr; gap: 3rem; }
-      .hero-visual-container { height: 300px; order: -1; }
-      
-      section { padding: 5rem 2rem; }
-      #skills { padding: 0 2rem 4rem; }
-      .about-layout { grid-template-columns: 1fr; gap: 3rem; }
-      .project-card { padding: 2rem; }
-      .metric-bar { grid-template-columns: 1fr; }
-      .metric { border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1rem; }
-      .metric:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
-      
-      footer { flex-direction: column; gap: 1rem; text-align: center; }
-      .contact-links { flex-direction: column; align-items: center; }
-
-      .tablet-frame { max-width: 340px; }
-    }
-  </style>
-</head>
-<body>
-
-  <nav>
-    <div class="nav-logo">azka<span>.</span>fauzan</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Work</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-
-  <div class="nav-mobile-menu" id="mobileMenu" role="navigation">
-    <a href="#about" class="mobile-nav-link">About</a>
-    <a href="#skills" class="mobile-nav-link">Skills</a>
-    <a href="#projects" class="mobile-nav-link">Work</a>
-    <a href="#contact" class="mobile-nav-link">Contact</a>
+<section id="projects">
+  <div class="section-header fade-up">
+    <div class="section-label">Selected Work</div>
+    <h2>Systems & Research</h2>
   </div>
 
-  <section id="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-grid-layout">
-      <div class="hero-content fade-up">
-        <div class="availability-badge">
-          <span class="availability-dot"></span>
-          Open to Opportunities
+  <!-- Project 1: SDO Solar -->
+  <article class="project-card fade-up">
+    <div class="project-content">
+      <div>
+        <div class="project-meta">
+          <span class="project-tag">Research · Deep Learning Pipeline</span>
+          <h3 class="project-title">SDO Solar Image Pipeline & Predictive AI</h3>
         </div>
-        <div class="hero-identity">Muhammad Azka Hafizha Fauzan</div>
-        <h1>Engineering Intelligence <br><em>from Raw Data.</em></h1>
-        <p class="hero-desc">
-          A computational physicist specializing in deep learning architectures and production engineering. I build systems that transform complex signals—from NASA satellite telemetry to real-time commercial operations—into deployed, actionable software.
-        </p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">View Case Studies</a>
-          <a href="cv_azka_fauzan_public.pdf" download class="btn btn-ghost">Download CV</a>
+        <div class="project-story">
+          <div class="story-block">
+            <h5>Context</h5>
+            <p>Standard terrestrial ML models fail on astronomical data due to radiometric constraints and missing spatial dynamics. Space weather forecasting required a custom architecture capable of processing 11 years of raw NASA satellite imagery.</p>
+          </div>
+          <div class="story-block">
+            <h5>Architecture</h5>
+            <p>Engineered an end-to-end pipeline processing ~24,000 FITS files into 6-channel tensors. Modified a ResNet-34 backbone for self-supervised learning (SimCLR), preserving magnetic polarities, and injected these physics-encoded weights into YOLOv5x for feature localization.</p>
+          </div>
+          <div class="story-block">
+            <h5>Impact</h5>
+            <p>Successfully compensated for solar fluid dynamics using the Snodgrass model and applied Granger Causality to statistically prove that Active Region expansions forecast sunspot formations with an optimal 3-day lead time.</p>
+          </div>
         </div>
       </div>
-      <div class="hero-visual fade-up">
-        <div class="hero-visual-container">
-          <svg class="hero-abstract-render" viewBox="0 0 480 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <radialGradient id="rg1" cx="30%" cy="40%" r="60%">
-                <stop offset="0%" stop-color="#7c73ff" stop-opacity="0.15"/>
-                <stop offset="100%" stop-color="#08080c" stop-opacity="0"/>
-              </radialGradient>
-              <radialGradient id="rg2" cx="75%" cy="70%" r="50%">
-                <stop offset="0%" stop-color="#ff7da9" stop-opacity="0.10"/>
-                <stop offset="100%" stop-color="#08080c" stop-opacity="0"/>
-              </radialGradient>
-              <filter id="glow">
-                <feGaussianBlur stdDeviation="2" result="blur"/>
-                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
-            </defs>
-            <rect width="480" height="400" fill="#0d0d18"/>
-            <rect width="480" height="400" fill="url(#rg1)"/>
-            <rect width="480" height="400" fill="url(#rg2)"/>
-            <g stroke="rgba(124,115,255,0.07)" stroke-width="0.5">
-              <line x1="0" y1="50" x2="480" y2="50"/><line x1="0" y1="100" x2="480" y2="100"/>
-              <line x1="0" y1="150" x2="480" y2="150"/><line x1="0" y1="200" x2="480" y2="200"/>
-              <line x1="0" y1="250" x2="480" y2="250"/><line x1="0" y1="300" x2="480" y2="300"/>
-              <line x1="0" y1="350" x2="480" y2="350"/><line x1="80" y1="0" x2="80" y2="400"/>
-              <line x1="160" y1="0" x2="160" y2="400"/><line x1="240" y1="0" x2="240" y2="400"/>
-              <line x1="320" y1="0" x2="320" y2="400"/><line x1="400" y1="0" x2="400" y2="400"/>
-            </g>
-            <ellipse cx="280" cy="200" rx="140" ry="140" fill="none" stroke="rgba(124,115,255,0.12)" stroke-width="0.8"/>
-            <ellipse cx="280" cy="200" rx="100" ry="100" fill="none" stroke="rgba(124,115,255,0.18)" stroke-width="0.8"/>
-            <ellipse cx="280" cy="200" rx="60" ry="60" fill="none" stroke="rgba(124,115,255,0.25)" stroke-width="1"/>
-            <g filter="url(#glow)">
-              <circle cx="280" cy="200" r="4" fill="#7c73ff" opacity="0.9"/>
-              <circle cx="380" cy="200" r="2.5" fill="#7c73ff" opacity="0.7"/>
-              <circle cx="230" cy="140" r="2" fill="#ff7da9" opacity="0.8"/>
-              <circle cx="195" cy="230" r="1.5" fill="#7c73ff" opacity="0.6"/>
-              <circle cx="330" cy="130" r="1.5" fill="#7c73ff" opacity="0.5"/>
-              <circle cx="340" cy="270" r="2" fill="#ff7da9" opacity="0.6"/>
-            </g>
-            <g stroke="rgba(124,115,255,0.2)" stroke-width="0.8">
-              <line x1="280" y1="200" x2="380" y2="200"/>
-              <line x1="280" y1="200" x2="230" y2="140"/>
-              <line x1="280" y1="200" x2="195" y2="230"/>
-              <line x1="280" y1="200" x2="330" y2="130"/>
-              <line x1="280" y1="200" x2="340" y2="270"/>
-            </g>
-            <g stroke="rgba(255,125,169,0.15)" stroke-width="0.6" stroke-dasharray="3 5">
-              <path d="M 60 80 Q 120 60 180 90 Q 240 120 300 100" fill="none"/>
-              <path d="M 40 320 Q 100 300 160 330 Q 220 360 280 340" fill="none"/>
-            </g>
-            <text x="16" y="385" font-family="monospace" font-size="8" fill="rgba(112,112,144,0.5)" letter-spacing="1">img src="profile.jpg"</text>
-          </svg>
-        </div>
+      <div class="project-actions">
+        <a href="#" class="btn-link disabled" aria-disabled="true" title="Coming soon">Read Thesis ↗</a>
+        <a href="https://github.com/azkafauzan21" target="_blank" rel="noopener" class="btn-link">View Repository ↗</a>
       </div>
     </div>
-  </section>
 
-  <section id="about">
-    <div class="section-header fade-up">
-      <div class="section-label">Architecture & Philosophy</div>
-      <h2>Scientific Rigor.<br>Engineering Execution.</h2>
-    </div>
-    <div class="about-layout fade-up">
-      <div class="about-narrative">
-        <p>
-          My foundation is built on a <strong>Bachelor of Science in Physics</strong> from Universitas Pendidikan Indonesia. While studying the universe, I discovered a profound interest in the systems used to measure it.
-        </p>
-        <p>
-          I view machine learning and software engineering not just as coding, but as applied physics—managing states, optimizing constraints, and modeling reality through data. Whether processing <strong>11 years of solar tensors</strong> or engineering an <strong>offline-first POS architecture</strong> for local businesses, the goal remains the same: robust, scalable systems.
-        </p>
-        <p>
-          I am currently seeking opportunities where I can apply my analytical background to <strong>data engineering, machine learning, and systems architecture</strong>.
-        </p>
+    <div class="project-visual-stack">
+      <div class="visual-main">
+        <img src="{{ '/assets/svg/Flowchart_sdo.svg' | relative_url }}" alt="SDO Solar Pipeline Architecture" style="width: 100%; height: auto; object-fit: contain; padding: 1rem;" />
       </div>
-      <div class="diff-list">
-        <div class="diff-item">
-          <h4>Physics Mindset</h4>
-          <p>Approaching data pipelines with an understanding of the underlying physical or business constraints, ensuring models respect reality rather than just statistical correlations.</p>
+
+      <div class="metric-bar">
+        <div class="metric">
+          <div class="metric-val">24k+</div>
+          <div class="metric-label">FITS Processed</div>
         </div>
-        <div class="diff-item">
-          <h4>Deep Learning Architecture</h4>
-          <p>Beyond calling APIs. Experience in modifying state-of-the-art backbones (ResNet, YOLO) to handle multi-dimensional, non-standard datasets (like 32-bit floating-point astronomical arrays).</p>
+        <div class="metric">
+          <div class="metric-val">6</div>
+          <div class="metric-label">Tensor Channels</div>
         </div>
-        <div class="diff-item">
-          <h4>Production Focused</h4>
-          <p>Code that lives outside isolated environments. Building resilient, offline-first mobile and web systems ensuring data integrity and seamless user experiences across constraints.</p>
+        <div class="metric">
+          <div class="metric-val">3-Day</div>
+          <div class="metric-label">Forecast Lead</div>
         </div>
+      </div>
+
+      <div class="tech-stack">
+        <span class="tech-badge">PyTorch</span>
+        <span class="tech-badge">SimCLR</span>
+        <span class="tech-badge">YOLOv5x</span>
+        <span class="tech-badge">SunPy</span>
+        <span class="tech-badge">NumPy</span>
       </div>
     </div>
-  </section>
+  </article>
 
-  <section id="skills">
-    <div class="section-header fade-up">
-      <div class="section-label">Technical Arsenal</div>
-      <h2>Skills & Stack</h2>
-    </div>
-    <div class="skills-grid fade-up">
-      <div class="skill-group">
-        <div class="skill-group-title">Machine Learning</div>
-        <div class="skill-tags">
-          <span class="skill-tag">PyTorch</span>
-          <span class="skill-tag">SimCLR</span>
-          <span class="skill-tag">YOLOv5x</span>
-          <span class="skill-tag">ResNet</span>
-          <span class="skill-tag">Scikit-learn</span>
+  <!-- Project 2: Lyra POS -->
+  <article class="project-card fade-up">
+    <div class="project-content">
+      <div>
+        <div class="project-meta">
+          <span class="project-tag">Enterprise Android App · Offline-First</span>
+          <h3 class="project-title">Lyra POS</h3>
+        </div>
+
+        <div class="quote-block">
+          "Engineering is the bridge between the precision of Physics and the chaos of human needs."
+        </div>
+
+        <div class="project-story">
+          <div class="story-block">
+            <h5>Context</h5>
+            <p>F&amp;B operations require absolute reliability. Existing cloud POS systems often fail during network drops, halting transactions, while on-premise solutions are too rigid for modern split-payment audits and real-time remote monitoring.</p>
+          </div>
+          <div class="story-block">
+            <h5>Architecture</h5>
+            <p>Developed an enterprise-grade Android application using React Native and Supabase. Implemented an offline-first architecture utilizing AsyncStorage for background queue synchronization, and enforced strict relational data integrity (hybrid stock, bundle variants) via Supabase Stored Procedures (RPCs).</p>
+          </div>
+          <div class="story-block">
+            <h5>Impact</h5>
+            <p>Achieved zero-latency checkouts on Android devices through optimistic UI rendering. The system seamlessly handles network outages, automatically reconciling split financial ledgers (Cash/QRIS) once connectivity is restored, providing precise audit trails without interrupting business flow.</p>
+          </div>
         </div>
       </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Data & Scientific</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">NumPy</span>
-          <span class="skill-tag">SunPy</span>
-          <span class="skill-tag">Pandas</span>
-          <span class="skill-tag">FITS</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Mobile & Frontend</div>
-        <div class="skill-tags">
-          <span class="skill-tag">React Native</span>
-          <span class="skill-tag">Android</span>
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">HTML/CSS</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Backend & Database</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Supabase</span>
-          <span class="skill-tag">PostgreSQL</span>
-          <span class="skill-tag">AsyncStorage</span>
-          <span class="skill-tag">REST APIs</span>
-        </div>
+
+      <div class="project-actions">
+        <a href="#" class="btn-link disabled" aria-disabled="true" title="Coming soon">View Documentation ↗</a>
+        <a href="https://github.com/azkafauzan21" target="_blank" rel="noopener" class="btn-link">View Repository ↗</a>
       </div>
     </div>
-  </section>
 
-  <section id="projects">
-    <div class="section-header fade-up">
-      <div class="section-label">Selected Work</div>
-      <h2>Systems & Research</h2>
+    <!-- ── Tablet Mockup Visual ──────────────────────────── -->
+    <div class="project-visual-stack">
+      <div class="tablet-wrapper">
+        <div class="tablet-frame">
+          <!-- Physical buttons -->
+          <div class="tablet-btn-left"></div>
+          <div class="tablet-btn-right tablet-btn-power"></div>
+          <div class="tablet-btn-right tablet-btn-vol-up"></div>
+          <div class="tablet-btn-right tablet-btn-vol-dn"></div>
+          <!-- Camera bar -->
+          <div class="tablet-camera-bar">
+            <div class="tablet-mic"></div>
+            <div class="tablet-camera"></div>
+          </div>
+          <!-- Screen with image slider -->
+          <div class="tablet-screen">
+            <div class="lyra-slide-track" id="lyraTrack">
+              <img src="{{ '/assets/images/lyra02.jpg' | relative_url }}" alt="Lyra POS — tampilan kasir" />
+              <img src="{{ '/assets/images/lyra01.jpg' | relative_url }}" alt="Lyra POS — tampilan produk" />
+            </div>
+          </div>
+          <!-- Home indicator -->
+          <div class="tablet-home-bar">
+            <div class="tablet-home-indicator"></div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="tablet-controls">
+          <div class="tablet-caption">
+            <span class="tc-label" id="lyraLabel">01 / 02</span>
+            <span class="tc-title" id="lyraTitle">Tampilan Kasir</span>
+          </div>
+          <div class="tablet-nav">
+            <button class="t-arrow-btn" id="lyraPrev" aria-label="Gambar sebelumnya" disabled>&#8592;</button>
+            <button class="t-dot-btn active" data-lyra-idx="0" aria-label="Gambar 1"></button>
+            <button class="t-dot-btn" data-lyra-idx="1" aria-label="Gambar 2"></button>
+            <button class="t-arrow-btn" id="lyraNext" aria-label="Gambar berikutnya">&#8594;</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="metric-bar">
+        <div class="metric">
+          <div class="metric-val">100%</div>
+          <div class="metric-label">Offline Uptime</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val">&lt;16ms</div>
+          <div class="metric-label">UI Render Time</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val">2-Way</div>
+          <div class="metric-label">Split Payments</div>
+        </div>
+      </div>
+
+      <div class="tech-stack">
+        <span class="tech-badge">Android</span>
+        <span class="tech-badge">React Native</span>
+        <span class="tech-badge">Supabase</span>
+        <span class="tech-badge">PostgreSQL</span>
+        <span class="tech-badge">AsyncStorage</span>
+      </div>
     </div>
+  </article>
+</section>
 
-    <!-- Project 1: SDO Solar -->
-    <article class="project-card fade-up">
-      <div class="project-content">
-        <div>
-          <div class="project-meta">
-            <span class="project-tag">Research · Deep Learning Pipeline</span>
-            <h3 class="project-title">SDO Solar Image Pipeline & Predictive AI</h3>
-          </div>
-          <div class="project-story">
-            <div class="story-block">
-              <h5>Context</h5>
-              <p>Standard terrestrial ML models fail on astronomical data due to radiometric constraints and missing spatial dynamics. Space weather forecasting required a custom architecture capable of processing 11 years of raw NASA satellite imagery.</p>
-            </div>
-            <div class="story-block">
-              <h5>Architecture</h5>
-              <p>Engineered an end-to-end pipeline processing ~24,000 FITS files into 6-channel tensors. Modified a ResNet-34 backbone for self-supervised learning (SimCLR), preserving magnetic polarities, and injected these physics-encoded weights into YOLOv5x for feature localization.</p>
-            </div>
-            <div class="story-block">
-              <h5>Impact</h5>
-              <p>Successfully compensated for solar fluid dynamics using the Snodgrass model and applied Granger Causality to statistically prove that Active Region expansions forecast sunspot formations with an optimal 3-day lead time.</p>
-            </div>
-          </div>
-        </div>
-        <div class="project-actions">
-          <a href="#" class="btn-link disabled" aria-disabled="true" title="Coming soon">Read Thesis ↗</a>
-          <a href="https://github.com/azkafauzan21" target="_blank" rel="noopener" class="btn-link">View Repository ↗</a>
-        </div>
-      </div>
-
-      <div class="project-visual-stack">
-        <div class="visual-main">
-          <img src="Flowchart_sdo.svg" alt="SDO Solar Pipeline Architecture" style="width: 100%; height: auto; object-fit: contain; padding: 1rem;" />
-        </div>
-
-        <div class="metric-bar">
-          <div class="metric">
-            <div class="metric-val">24k+</div>
-            <div class="metric-label">FITS Processed</div>
-          </div>
-          <div class="metric">
-            <div class="metric-val">6</div>
-            <div class="metric-label">Tensor Channels</div>
-          </div>
-          <div class="metric">
-            <div class="metric-val">3-Day</div>
-            <div class="metric-label">Forecast Lead</div>
-          </div>
-        </div>
-
-        <div class="tech-stack">
-          <span class="tech-badge">PyTorch</span>
-          <span class="tech-badge">SimCLR</span>
-          <span class="tech-badge">YOLOv5x</span>
-          <span class="tech-badge">SunPy</span>
-          <span class="tech-badge">NumPy</span>
-        </div>
-      </div>
-    </article>
-
-    <!-- Project 2: Lyra POS -->
-    <article class="project-card fade-up">
-      <div class="project-content">
-        <div>
-          <div class="project-meta">
-            <span class="project-tag">Enterprise Android App · Offline-First</span>
-            <h3 class="project-title">Lyra POS</h3>
-          </div>
-
-          <div class="quote-block">
-            "Engineering is the bridge between the precision of Physics and the chaos of human needs."
-          </div>
-
-          <div class="project-story">
-            <div class="story-block">
-              <h5>Context</h5>
-              <p>F&amp;B operations require absolute reliability. Existing cloud POS systems often fail during network drops, halting transactions, while on-premise solutions are too rigid for modern split-payment audits and real-time remote monitoring.</p>
-            </div>
-            <div class="story-block">
-              <h5>Architecture</h5>
-              <p>Developed an enterprise-grade Android application using React Native and Supabase. Implemented an offline-first architecture utilizing AsyncStorage for background queue synchronization, and enforced strict relational data integrity (hybrid stock, bundle variants) via Supabase Stored Procedures (RPCs).</p>
-            </div>
-            <div class="story-block">
-              <h5>Impact</h5>
-              <p>Achieved zero-latency checkouts on Android devices through optimistic UI rendering. The system seamlessly handles network outages, automatically reconciling split financial ledgers (Cash/QRIS) once connectivity is restored, providing precise audit trails without interrupting business flow.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-actions">
-          <a href="#" class="btn-link disabled" aria-disabled="true" title="Coming soon">View Documentation ↗</a>
-          <a href="https://github.com/azkafauzan21" target="_blank" rel="noopener" class="btn-link">View Repository ↗</a>
-        </div>
-      </div>
-
-      <!-- ── Tablet Mockup Visual ──────────────────────────── -->
-      <div class="project-visual-stack">
-        <div class="tablet-wrapper">
-          <div class="tablet-frame">
-            <!-- Physical buttons -->
-            <div class="tablet-btn-left"></div>
-            <div class="tablet-btn-right tablet-btn-power"></div>
-            <div class="tablet-btn-right tablet-btn-vol-up"></div>
-            <div class="tablet-btn-right tablet-btn-vol-dn"></div>
-            <!-- Camera bar -->
-            <div class="tablet-camera-bar">
-              <div class="tablet-mic"></div>
-              <div class="tablet-camera"></div>
-            </div>
-            <!-- Screen with image slider -->
-            <div class="tablet-screen">
-              <div class="lyra-slide-track" id="lyraTrack">
-                <img src="lyra02.jpg" alt="Lyra POS — tampilan kasir" />
-                <img src="lyra01.jpg" alt="Lyra POS — tampilan produk" />
-              </div>
-            </div>
-            <!-- Home indicator -->
-            <div class="tablet-home-bar">
-              <div class="tablet-home-indicator"></div>
-            </div>
-          </div>
-
-          <!-- Controls -->
-          <div class="tablet-controls">
-            <div class="tablet-caption">
-              <span class="tc-label" id="lyraLabel">01 / 02</span>
-              <span class="tc-title" id="lyraTitle">Tampilan Kasir</span>
-            </div>
-            <div class="tablet-nav">
-              <button class="t-arrow-btn" id="lyraPrev" aria-label="Gambar sebelumnya" disabled>&#8592;</button>
-              <button class="t-dot-btn active" data-lyra-idx="0" aria-label="Gambar 1"></button>
-              <button class="t-dot-btn" data-lyra-idx="1" aria-label="Gambar 2"></button>
-              <button class="t-arrow-btn" id="lyraNext" aria-label="Gambar berikutnya">&#8594;</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="metric-bar">
-          <div class="metric">
-            <div class="metric-val">100%</div>
-            <div class="metric-label">Offline Uptime</div>
-          </div>
-          <div class="metric">
-            <div class="metric-val">&lt;16ms</div>
-            <div class="metric-label">UI Render Time</div>
-          </div>
-          <div class="metric">
-            <div class="metric-val">2-Way</div>
-            <div class="metric-label">Split Payments</div>
-          </div>
-        </div>
-
-        <div class="tech-stack">
-          <span class="tech-badge">Android</span>
-          <span class="tech-badge">React Native</span>
-          <span class="tech-badge">Supabase</span>
-          <span class="tech-badge">PostgreSQL</span>
-          <span class="tech-badge">AsyncStorage</span>
-        </div>
-      </div>
-    </article>
-  </section>
-
-  <section id="contact" class="fade-up">
-    <div class="section-label">Connect</div>
-    <h2>Let's Work Together</h2>
-    <p class="contact-desc">
-      Whether it's a discussion about computational modeling, data architecture, or potential full-time opportunities, I'm open to hearing from you.
-    </p>
-    <div class="contact-links">
-      <a href="mailto:azkahafizha465@gmail.com" class="btn btn-primary">azkahafizha465@gmail.com</a>
-      <a href="https://www.linkedin.com/in/muhammad-azka-hafizha-fauzan-9b076117b/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
-      <a href="https://github.com/azkafauzan21" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
-    </div>
-  </section>
-
-  <footer>
-    <span>© 2026 Azka Fauzan</span>
-    <span>Designed for execution.</span>
-  </footer>
-
-  <script>
-    // ── Scroll Animations ──────────────────────────────────
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-    // ── Hamburger Menu ─────────────────────────────────────
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    hamburger.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('open');
-      hamburger.classList.toggle('open', isOpen);
-      hamburger.setAttribute('aria-expanded', isOpen);
-    });
-    document.querySelectorAll('.mobile-nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', false);
-      });
-    });
-    document.addEventListener('click', (e) => {
-      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
-        mobileMenu.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', false);
-      }
-    });
-
-    // ── Lyra POS Tablet Slider ─────────────────────────────
-    (function () {
-      const slides = [
-        { label: '01 / 02', title: 'Tampilan Kasir' },
-        { label: '02 / 02', title: 'Tampilan Laporan' },
-      ];
-      let current = 0;
-      const track  = document.getElementById('lyraTrack');
-      const dots   = document.querySelectorAll('[data-lyra-idx]');
-      const prev   = document.getElementById('lyraPrev');
-      const next   = document.getElementById('lyraNext');
-      const label  = document.getElementById('lyraLabel');
-      const title  = document.getElementById('lyraTitle');
-
-      function goTo(idx) {
-        current = idx;
-        track.style.transform = `translateX(-${idx * 50}%)`;
-        dots.forEach((d, i) => d.classList.toggle('active', i === idx));
-        prev.disabled = idx === 0;
-        next.disabled = idx === slides.length - 1;
-        label.textContent = slides[idx].label;
-        title.textContent = slides[idx].title;
-      }
-
-      prev.addEventListener('click', () => { if (current > 0) goTo(current - 1); });
-      next.addEventListener('click', () => { if (current < slides.length - 1) goTo(current + 1); });
-      dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.lyraIdx)));
-
-      // Touch swipe support
-      let startX = 0;
-      const screen = track.parentElement;
-      screen.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-      screen.addEventListener('touchend', e => {
-        const diff = startX - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 40) {
-          if (diff > 0 && current < slides.length - 1) goTo(current + 1);
-          if (diff < 0 && current > 0) goTo(current - 1);
-        }
-      }, { passive: true });
-    })();
-  </script>
-</body>
-</html>
+<section id="contact" class="fade-up">
+  <div class="section-label">Connect</div>
+  <h2>Let's Work Together</h2>
+  <p class="contact-desc">
+    Whether it's a discussion about computational modeling, data architecture, or potential full-time opportunities, I'm open to hearing from you.
+  </p>
+  <div class="contact-links">
+    <a href="mailto:azkahafizha465@gmail.com" class="btn btn-primary">azkahafizha465@gmail.com</a>
+    <a href="https://www.linkedin.com/in/muhammad-azka-hafizha-fauzan-9b076117b/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+    <a href="https://github.com/azkafauzan21" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+  </div>
+</section>

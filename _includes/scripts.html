@@ -1,0 +1,76 @@
+<script>
+  // ── Scroll Animations ──────────────────────────────────
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // ── Hamburger Menu ─────────────────────────────────────
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+    });
+  });
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+    }
+  });
+
+  // ── Lyra POS Tablet Slider ─────────────────────────────
+  (function () {
+    const slides = [
+      { label: '01 / 02', title: 'Tampilan Kasir' },
+      { label: '02 / 02', title: 'Tampilan Laporan' },
+    ];
+    let current = 0;
+    const track  = document.getElementById('lyraTrack');
+    const dots   = document.querySelectorAll('[data-lyra-idx]');
+    const prev   = document.getElementById('lyraPrev');
+    const next   = document.getElementById('lyraNext');
+    const label  = document.getElementById('lyraLabel');
+    const title  = document.getElementById('lyraTitle');
+
+    function goTo(idx) {
+      current = idx;
+      track.style.transform = `translateX(-${idx * 50}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+      prev.disabled = idx === 0;
+      next.disabled = idx === slides.length - 1;
+      label.textContent = slides[idx].label;
+      title.textContent = slides[idx].title;
+    }
+
+    prev.addEventListener('click', () => { if (current > 0) goTo(current - 1); });
+    next.addEventListener('click', () => { if (current < slides.length - 1) goTo(current + 1); });
+    dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.lyraIdx)));
+
+    // Touch swipe support
+    let startX = 0;
+    const screen = track.parentElement;
+    screen.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+    screen.addEventListener('touchend', e => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0 && current < slides.length - 1) goTo(current + 1);
+        if (diff < 0 && current > 0) goTo(current - 1);
+      }
+    }, { passive: true });
+  })();
+</script>
